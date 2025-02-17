@@ -8,12 +8,12 @@
 		<version>3.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>MyTiffin</groupId>
-	<artifactId>MyTiffin</artifactId>
+	<groupId>Mytiffin</groupId>
+	<artifactId>Mytiffin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>MyTiffin</name>
-	<description>MyTiffin</description>
+	<name>Mytiffin</name>
+	<description>Mytiffin</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -62,15 +62,13 @@
 			<scope>test</scope>
 		</dependency>
 		
-		
+				
 		<!-- https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper -->
 <dependency>
     <groupId>org.apache.tomcat.embed</groupId>
     <artifactId>tomcat-embed-jasper</artifactId>
-   
 </dependency>
 
-		
 		
 	</dependencies>
 

@@ -19,6 +19,7 @@ public class CityController {
 		return "NewCity";
 	}
 	
+	
 	@PostMapping("savecity")
 	public String savecity(CityEntity entitycity) {
 		System.out.println(entitycity.getCityName());
