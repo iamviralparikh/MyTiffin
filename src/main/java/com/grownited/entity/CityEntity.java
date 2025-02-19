@@ -12,7 +12,7 @@ public class CityEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer CityId;
-	private String CityName;
+	private String cityName;
 	private Integer stateId;
 	
 	public Integer getStateId() {
@@ -30,13 +30,17 @@ public class CityEntity {
 	public void setCityId(Integer cityId) {
 		CityId = cityId;
 	}
-	
+
 	public String getCityName() {
-		return CityName;
+		return cityName;
 	}
-	
+
 	public void setCityName(String cityName) {
-		CityName = cityName;
+		this.cityName = cityName;
 	}
 	
+
+	
+
+
 }
