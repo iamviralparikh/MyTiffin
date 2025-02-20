@@ -22,6 +22,15 @@ public class CityController {
 		return "NewCity";
 	}
 	
+	
+	
+	@PostMapping("savecity")
+	public String savecity(CityEntity entitycity) {
+		// System.out.println(entitycity.getCityName()); 
+		repositorycity.save(entitycity);
+		return "redirect:/listcity";
+	}
+	
 	@GetMapping("listcity")
 	public String listcity(Model modelcity){
 		List<CityEntity> citylisted = repositorycity.findAll();
@@ -30,12 +39,7 @@ public class CityController {
 	
 	}
 	
-	@PostMapping("savecity")
-	public String savecity(CityEntity entitycity) {
-		// System.out.println(entitycity.getCityName()); 
-		repositorycity.save(entitycity);
-		return "NewCity";
-	}
+	
 }
 
 

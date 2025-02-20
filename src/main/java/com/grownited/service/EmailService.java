@@ -12,10 +12,13 @@ public class EmailService {
 	JavaMailSender mailSender;
 
 	public void sendWelcomeMail(String email, String firstName) {
-		String subject = "Welcome to iGate";
+		String subject = "Welcome to MyTiffin ";
 		String body = "Hey " + firstName
-				+ ", We're excited to have you on board. If you have any questions, feel free to reach out – we’re here to help!";
+				+ ", Your Account has Succesfull signed up"
+				+  " & Thanks for joining us "
+				+ " Now you can login ";
 		String from = "viralparikhldce@gmail.com";
+		
 
 		// logic
 		SimpleMailMessage message = new SimpleMailMessage();

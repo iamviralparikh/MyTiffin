@@ -2,10 +2,12 @@ package com.grownited.controller;
 
 
 import java.beans.Encoder;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.grownited.entity.UserEntity;
@@ -45,7 +47,7 @@ public class SessionController {
 
 		String passwording = encodering.encode(EntityUser.getPassword());
 		EntityUser.setPassword(passwording);
-		//First encryption in the database
+		//First encryption always in the database
 		repositoryUser.save(EntityUser);
 		//Second save the database
 		emailService.sendWelcomeMail(EntityUser.getEmail(),EntityUser.getFirstName() );
@@ -54,5 +56,14 @@ public class SessionController {
 		
 		return "login";
 	}
+	
+	@GetMapping("listuser")
+	public String listuser(Model modeluser) {
+		List<UserEntity> userlisted = repositoryUser.findAll();
+		modeluser.addAttribute("Listuser", userlisted);
+		return "Listuser";
+	}
+	
+	
 	
 }

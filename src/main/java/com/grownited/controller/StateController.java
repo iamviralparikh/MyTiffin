@@ -1,7 +1,10 @@
 package com.grownited.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -24,6 +27,18 @@ public class StateController {
 	public String savestate(StateEntity state) {
 		System.out.println(state.getStateName());
 		repositoryState.save(state);
-		return "NewState";
+		return "redirect:/liststate";
 	}
+	
+	
+	
+	@GetMapping("liststate")
+	public String liststate(Model modelstate) {
+		List<StateEntity> statelisted = repositoryState.findAll() ;
+		modelstate.addAttribute("ListState", statelisted);
+		return "ListState";
+	}
+	
+	
+	
 }

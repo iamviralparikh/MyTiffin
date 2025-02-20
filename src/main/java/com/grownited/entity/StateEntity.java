@@ -12,7 +12,7 @@ public class StateEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer StateId;
-	private String StateName;
+	private String stateName;
 	public Integer getStateId() {
 		return StateId;
 	}
@@ -20,11 +20,13 @@ public class StateEntity {
 		StateId = stateId;
 	}
 	public String getStateName() {
-		return StateName;
+		return stateName;
 	}
 	public void setStateName(String stateName) {
-		StateName = stateName;
+		this.stateName = stateName;
 	}
+	
+	
 	
 	
 }
