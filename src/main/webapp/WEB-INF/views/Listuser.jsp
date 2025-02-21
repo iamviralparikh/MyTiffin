@@ -27,6 +27,7 @@
                         <th>Gender</th>
                         <th>Email</th>
                         <th>Mobile Number</th>
+                        <th>Date Of Birth</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -39,6 +40,7 @@
                             <td>${us.gender}</td>
                             <td>${us.email}</td>
                             <td>${us.contactNum}</td>
+                            <td>${us.dob}</td>
                             <td>
                                 <a href="viewuser?userId=${us.userId}" class="btn btn-sm btn-info">View</a>
                                 <a href="edituser?userId=${us.userId}" class="btn btn-sm btn-warning">Edit</a>

@@ -24,6 +24,13 @@
                 <label for="lastName" class="form-label">Last Name</label>
                 <input type="text" class="form-control" id="lastName" name="lastName" required>
             </div>
+            
+            <!-- Date of birth -->
+            <div class="mb-3">
+            <label for="dob" class="form-label">Date Of Birth </label>
+                <input type="date" class="form-control" id="dob" name="dob" required>
+            </div>
+            
 
             <!-- Email -->
             <div class="mb-3">

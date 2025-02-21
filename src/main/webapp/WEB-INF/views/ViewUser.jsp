@@ -8,10 +8,24 @@
 </head>
 <body>
 	<h1>View User</h1>
-	Fist Name:${user.firstName}<br></br>
-	Last Name:${user.lastName}<br></br>
-	E-mail:${user.email}<br></br>
-	Contact Number:${user.contactNum}<br></br>
-	Gender:${user.gender}<br></br>
+	<table border=1>
+	<tr>
+		<th>First Name:</th>
+		<th>Second Name:</th>
+		<th>E-mail:</th>
+		<th>Mobile Number:</th>
+		<th>Gender:</th>
+		<th>Date Of Birth</th>
+	</tr>
+	<tr>
+	<td>${user.firstName}</td>
+	<td>${user.lastName}</td>
+	<td>${user.email}</td>
+	<td>${user.contactNum}</td>
+	<td>${user.gender}</td>
+	<td>${user.dob}</td>
+	
+	<tr>
+	</table>
 </body>
 </html>

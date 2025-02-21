@@ -1,7 +1,6 @@
 package com.grownited.entity;
 
-import java.security.PrivateKey;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,9 +15,11 @@ public class UserEntity {
 	private Integer userId;
 	private String firstName;
 	private String lastName;
+	@Column(unique = true)
 	private String email;
 	private String password;
 	private String gender;
+	private String dob;
 	private String contactNum;
 	private String role;
 	private String createdAt;
@@ -82,6 +83,12 @@ public class UserEntity {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getDob() {
+		return dob;
+	}
+	public void setDob(String dob) {
+		this.dob = dob;
 	}
 	
 	
