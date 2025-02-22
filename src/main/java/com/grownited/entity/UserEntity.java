@@ -15,7 +15,7 @@ public class UserEntity {
 	private Integer userId;
 	private String firstName;
 	private String lastName;
-	@Column(unique = true)
+	//@Column(unique = true)
 	private String email;
 	private String password;
 	private String gender;

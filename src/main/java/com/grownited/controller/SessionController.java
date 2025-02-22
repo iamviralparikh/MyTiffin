@@ -36,6 +36,11 @@ public class SessionController {
 		return "signup";
 	}
 	
+	@GetMapping("login")
+	public String login() {
+		return "login";
+	} 
+	
 	@PostMapping("saveuser")
 	public String saveuser(@Validated UserEntity EntityUser){
 		//System.out.println(EntityUser.getUserId());
