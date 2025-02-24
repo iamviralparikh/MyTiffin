@@ -1,6 +1,7 @@
 package com.grownited.controller;
 
 
+import java.security.PublicKey;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.grownited.entity.UserEntity;
 import com.grownited.repository.UserRepository;
 import com.grownited.service.EmailService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 
@@ -96,25 +99,43 @@ public class SessionController {
 	}
 	
 	
-	@PostMapping("authenticate")
-	public String authenticate(String email , String password , Model model) {
-		System.out.println(email);
-		System.out.println(password); // users -> email,password
-		
-		Optional<UserEntity> op = repositoryUser.findByEmail(email) ; 		// select * from users where email = :email and password = :password
-				if (op.isPresent()) {
-					// true
-					// email
-					UserEntity dbUser = op.get();
-					if (encodering.matches(password, dbUser.getPassword())) {
-						return "redirect:/home";
-					}
-				}
-				model.addAttribute("error","Invalid Credentials");
-		
-		return "login"; // jsp file
-	}
-	
-	
-	
+	@PostMapping("/authenticate")
+    public String authenticate(String email, String password, Model model, HttpSession session) {
+        Optional<UserEntity> userOptional = repositoryUser.findByEmail(email);
+
+        if (userOptional.isPresent()) {
+            UserEntity dbUser = userOptional.get();
+
+            // Check if password matches
+            if (encodering.matches(password, dbUser.getPassword())) {
+                session.setAttribute("user", dbUser);
+
+                if ("ADMIN".equals(dbUser.getRole())) {
+                    return "redirect:/admindashboard";
+                } else if ("USER".equals(dbUser.getRole())) {
+                    return "redirect:/home";
+                }
+                	else if ("VENDOR".equals(dbUser.getRole())) {
+                    return "redirect:/vendordashboard";
+                }else {
+                    model.addAttribute("error", "Please Contact the Admin");
+                    return "login";
+                }
+            }
+        }
+
+        model.addAttribute("error", "Invalid email or password");
+        return "login";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/login";
+    }
 }
+	
+	
+	
+	
+	

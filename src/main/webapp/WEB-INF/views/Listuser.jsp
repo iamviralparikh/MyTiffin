@@ -20,11 +20,14 @@
             height: 100vh;
             margin: 0;
         }
+        .mb-4{
+        margin-top:1.5rem ;
+        }
         .table-container {
             background: rgba(255, 255, 255, 0.3); /* Semi-transparent blue */
             backdrop-filter: blur(10px); /* Glass effect */
             padding: 30px;
-            border-radius: 20px;
+            border-radius: 50px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             width: 90%;
             max-width: 600px;
@@ -32,7 +35,9 @@
         }
         table {
             width: 100%;
+            background-color:transparent;
             border-collapse: collapse;
+            border-radius: 50px;
         }
         th, td {
             padding: 12px;
@@ -40,6 +45,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.5);
             color: white;
             font-weight: bold;
+            border-radius:20px;
         }
         th {
             background-color: #0d6efd; /* Bootstrap primary blue */
@@ -47,6 +53,19 @@
         tr:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
+        .h2,h2{
+        font-size: calc(1.325rem + .9vw);
+    background-color: black;
+    border-radius: 50px;
+    color: white;}
+    
+    .a{
+    border-radius:50px;
+    }
+    .td{
+    background:none;
+    opacity:1.0;
+    }
     </style>
 </head>
 <body class="bg-light">

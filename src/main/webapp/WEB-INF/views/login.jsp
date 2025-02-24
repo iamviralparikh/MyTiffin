@@ -27,8 +27,15 @@
     backdrop-filter: blur(10px); /* Glassmorphism effect */
     color: black; /* Keep text readable */
 }
-
-        
+.form-control{
+border-radius: 50px;}
+           .btn:hover{
+    background-color:black;
+    border-color:black;}
+    
+    .btn{
+    border-radius:50px;
+    }
     </style>
 </head>
 <body>

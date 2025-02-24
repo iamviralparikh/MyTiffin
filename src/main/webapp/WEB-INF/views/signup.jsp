@@ -33,13 +33,33 @@
         }
         .form-label {
             font-weight: bold;
-        }
-        .btn-primary {
             
+            
+        }
+        
+        .form-select{
+        border-radius: 50px;
+        }
+        
+        .btn-primary {
+            border-radius:50px;
             border: black;
         }
         .btn-primary:hover {
-            background-color: darkblue;
+            background-color: black;
+        }
+        
+        .mb-3,{
+        margin: 1rem !important;
+        padding:20rem; 
+        }
+        
+        .mb-1{
+        padding-right: 1rem;
+        }
+          
+        .form-control{
+        border-radius: 50px;
         }
     </style>
 </head>
@@ -50,15 +70,15 @@
         <form action="saveuser" method="post">
             <div class="mb-3">
                 <label for="firstName" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="firstName" name="firstName" required>
+                <input type="text" class="form-control" id="firstName" name="firstName"  required>
             </div>
             <div class="mb-3">
                 <label for="lastName" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lastName" name="lastName" required>
+                <input type="text" class="form-control" id="lastName" name="lastName"  required>
             </div>
             <div class="mb-3">
                 <label for="dob" class="form-label">Date Of Birth</label>
-                <input type="date" class="form-control" id="dob" name="dob" required>
+                <input type="date" class="form-control" id="dob" name="dob" placeholder="DATE-MONTH-YEAR" required>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
@@ -68,10 +88,10 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <div class="mb-2">
+            <div class="mb-1">
                 <label class="form-label">Gender</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required>
+                    <input class="form-check-input" type="radio" name="gender" id="male" value="Male"  required>
                     <label class="form-check-label" for="male">Male</label>
                 </div>
                 <div class="form-check">
