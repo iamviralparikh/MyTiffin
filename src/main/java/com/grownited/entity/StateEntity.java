@@ -11,13 +11,13 @@ import jakarta.persistence.Table;
 public class StateEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer StateId;
+	private Integer stateId;
 	private String stateName;
 	public Integer getStateId() {
-		return StateId;
+		return stateId;
 	}
 	public void setStateId(Integer stateId) {
-		StateId = stateId;
+		this.stateId = stateId;
 	}
 	public String getStateName() {
 		return stateName;

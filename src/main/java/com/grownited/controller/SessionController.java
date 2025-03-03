@@ -117,7 +117,11 @@ public class SessionController {
                 }
                 	else if ("VENDOR".equals(dbUser.getRole())) {
                     return "redirect:/vendordashboard";
-                }else {
+                }
+                	else if ("DELIVERY".equals(dbUser.getRole())) {
+                    return "redirect:/deliverydashboard";
+                }
+                	else {
                     model.addAttribute("error", "Please Contact the Admin");
                     return "login";
                 }

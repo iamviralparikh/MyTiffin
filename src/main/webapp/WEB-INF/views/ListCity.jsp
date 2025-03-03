@@ -54,10 +54,12 @@
         <table>
             <tr>
                 <th>City Name</th>
+                <th>State Name </th>
             </tr>
             <c:forEach items="${ListCity}" var="cl">
                 <tr>
                     <td>${cl.cityName}</td>
+                    <td>${st.stateName}</td>
                 </tr>
             </c:forEach>
         </table>

@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
+  
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+   
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +14,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
+	
     <div class="container mt-5">
         <div class="card">
             <div class="card-header bg-primary text-white">
@@ -20,6 +26,12 @@
                     <div class="mb-3">
                         <label for="cityName" class="form-label">City Name</label>
                         <input type="text" class="form-control" id="cityName" name="cityName" required>
+                        <br> State: <select name="stateId">
+                        <option>Select State</option>
+                        <c:forEach items="${allState}" var="st">
+                <option value="${st.stateId}">${st.stateName}</option>
+            </c:forEach>
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>

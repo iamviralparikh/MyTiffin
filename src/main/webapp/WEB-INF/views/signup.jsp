@@ -110,6 +110,7 @@
                     <option value="ADMIN">Admin</option>
                     <option value="USER">User</option>
                     <option value="VENDOR">Vendor</option>
+                    <option value="DELIVERY">Delivery</option>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary w-100">Register</button>

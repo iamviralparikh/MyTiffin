@@ -8,5 +8,7 @@
 </head>
 <body>
 	<h1>HEllo Vendor</h1>
+	<a href="logout"> log out</a>
 </body>
+
 </html>
