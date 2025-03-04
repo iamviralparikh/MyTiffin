@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -75,7 +76,38 @@ public class SessionController {
 	}
 	
 
-	
+	// open forgetpassword jsp
+		@GetMapping("/forgetpassword")
+		public String forgetPassword() {
+			return "ForgetPassword";
+		}
+
+		// submit on forgetpassword ->
+		@PostMapping("sendotp")
+		public String sendOtp(String email, Model model) {
+			// email valid
+			Optional<UserEntity> op = repositoryUser.findByEmail(email);
+			if (op.isEmpty()) {
+				// email invalid
+				model.addAttribute("error", "Email not found");
+				return "ForgetPassword";
+			} else {
+				// email valid
+				// send mail otp
+				// opt generate
+				// send mail otp
+				String otp = "";
+				otp = (int) (Math.random() * 1000000) + "";// 0.25875621458541
+
+				UserEntity user = op.get();
+				user.setOtp(otp);
+				repositoryUser.save(user);// update otp for user
+				emailService.sendOtpForForgetPassword(email, user.getFirstName(), otp);
+				return "ChangePassword";
+
+			}
+		}
+
 	
 	@GetMapping("viewuser")
 	public String viewuser(Integer userId , Model modeluser) {

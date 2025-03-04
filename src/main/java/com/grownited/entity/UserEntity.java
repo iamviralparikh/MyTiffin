@@ -24,6 +24,7 @@ public class UserEntity {
 	private String role;
 	private String createdAt;
 	private String status;
+	private String otp; 
 	public Integer getUserId() {
 		return userId;
 	}
@@ -89,6 +90,12 @@ public class UserEntity {
 	}
 	public void setDob(String dob) {
 		this.dob = dob;
+	}
+	public String getOtp() {
+		return otp;
+	}
+	public void setOtp(String otp) {
+		this.otp = otp;
 	}
 	
 	

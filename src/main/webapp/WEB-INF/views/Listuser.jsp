@@ -11,103 +11,27 @@
     <title>List Users</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-	<style>
-         body {
-            background: url('background_signup_login.jpg') no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .mb-4{
-        margin-top:1.5rem ;
-        }
-        .table-container {
-            background: rgba(255, 255, 255, 0.3); /* Semi-transparent blue */
-            backdrop-filter: blur(10px); /* Glass effect */
-            padding: 30px;
-            border-radius: 50px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            width: 90%;
-            max-width: 600px;
-            text-align: center;
-        }
-        table {
-            width: 100%;
-            background-color:transparent;
-            border-collapse: collapse;
-            border-radius: 50px;
-        }
-        th, td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-            color: white;
-            font-weight: bold;
-            border-radius:20px;
-        }
-        th {
-            background-color: #0d6efd; /* Bootstrap primary blue */
-        }
-        tr:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        .h2,h2{
-        font-size: calc(1.325rem + .9vw);
-    background-color: black;
-    border-radius: 50px;
-    color: white;}
-    
-    .a{
-    border-radius:50px;
-    }
-    .td{
-    background:none;
-    opacity:1.0;
-    }
-    </style>
+	<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+<jsp:include page="AdminCss.jsp"></jsp:include>
+	
 </head>
 <body class="bg-light">
+		<jsp:include page="AdminHeader.jsp"></jsp:include>
 
-    <div class="container mt-5">
-        <h2 class="text-center mb-4">User List</h2>
-
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover shadow-sm bg-white">
-                <thead class="table-dark">
-                    <tr>
-                        <th>ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Gender</th>
-                        <th>Email</th>
-                        <th>Mobile Number</th>
-                        <th>Date Of Birth</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <c:forEach items="${Listuser}" var="us">
-                        <tr>
-                            <td>${us.userId}</td>
-                            <td>${us.firstName}</td>
-                            <td>${us.lastName}</td>
-                            <td>${us.gender}</td>
-                            <td>${us.email}</td>
-                            <td>${us.contactNum}</td>
-                            <td>${us.dob}</td>
-                            <td>
-                                <a href="viewuser?userId=${us.userId}" class="btn btn-sm btn-info">View</a>
-                                <a href="edituser?userId=${us.userId}" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="deleteuser?userId=${us.userId}" class="btn btn-sm btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
-        </div>
-    </div>
+	<jsp:include page="AdminSidebar.jsp"></jsp:include>
+		
+<div class="col-24">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">list of <span> User</span></h5>
+    
+            
+   </div>
+   </div>
+   </div>
+   
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
