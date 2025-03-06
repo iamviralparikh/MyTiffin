@@ -22,4 +22,16 @@ public class AdminController {
 		return "AdminDashboard";
 	}
 	
+	@GetMapping("addState")
+	public String addState() {
+		return "AddState";
+	}
+	
+	
+	@GetMapping("addcity")
+	public String addcity() {
+		
+		return "AddCity";
+	}
+	
 }

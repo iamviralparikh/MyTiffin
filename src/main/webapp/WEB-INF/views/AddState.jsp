@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 	
-	
-	
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,20 +43,20 @@
 							 
 								<div class="card-body">
 									<h5 class="card-title">
-										list<span>City</span>
+										Reports <span>/Today</span>
 									</h5>
+<form action="savestate" method="post">
 
-					<table border="1">
-            <tr>
-                <th>City Name</th>
-            </tr>
-            <c:forEach items="${ListCity}" var="cl">
-                <tr>
-                    <td>${cl.cityName}</td>
- 
-                </tr>
-            </c:forEach>
-        </table>
+            <!-- State Name -->
+            <div class="mb-3">
+                <label for="stateName" class="form-label">State Name</label>
+                <input type="text" class="form-control" id="stateName" name="stateName" required>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">Save State</button>
+
+        </form>
 
 								</div>
 

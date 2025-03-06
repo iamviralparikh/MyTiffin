@@ -46,7 +46,7 @@ public class SessionController {
 	} 
 	
 	@PostMapping("saveuser")
-	public String saveuser(@Validated UserEntity EntityUser){
+	public String saveuser(UserEntity EntityUser){
 		//System.out.println(EntityUser.getUserId());
 		//System.out.println(EntityUser.getFirstName());
 		//System.out.println(EntityUser.getLastName());
@@ -70,8 +70,11 @@ public class SessionController {
 	
 	@GetMapping("listuser")
 	public String listuser(Model modeluser) {
+		
 		List<UserEntity> userlisted = repositoryUser.findAll();
+		
 		modeluser.addAttribute("Listuser", userlisted);
+		
 		return "Listuser";
 	}
 	
@@ -108,7 +111,34 @@ public class SessionController {
 			}
 		}
 
+		
+		
+		@PostMapping("updatepassword")
+		public String updatePassword(String email, String password, String otp, Model model) {
+			Optional<UserEntity> op = repositoryUser.findByEmail(email);
+			if (op.isEmpty()) {
+				model.addAttribute("error", "Invalid Data");
+				return "ChangePassword";
+			} else {
+				UserEntity user = op.get();
+				if (user.getOtp().equals(otp)) {
+					String encPwd = encodering.encode(password);
+					user.setPassword(encPwd);
+					user.setOtp("");
+					repositoryUser.save(user);// update
+				} else {
+
+					model.addAttribute("error", "Invalid Data");
+					return "ChangePassword";
+				}
+			}
+			model.addAttribute("msg","Password updated");
+			return "login";
+		}
 	
+		
+		
+		
 	@GetMapping("viewuser")
 	public String viewuser(Integer userId , Model modeluser) {
 		System.out.println("ID==>"+ userId );

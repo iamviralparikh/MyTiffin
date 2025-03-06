@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 	
-	
-	
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,29 +40,30 @@
 
 				<!-- Left side columns -->
 				<div class="col-lg-12">
-					<div class="row" >
+					<div class="row">
 						<!-- Reports -->
 						<div class="col-12">
 							<div class="card">
 
-							 
+
 								<div class="card-body">
 									<h5 class="card-title">
-										list<span>City</span>
+										New<span>City</span>
 									</h5>
-
-					<table border="1">
-            <tr>
-                <th>City Name</th>
-            </tr>
-            <c:forEach items="${ListCity}" var="cl">
-                <tr>
-                    <td>${cl.cityName}</td>
- 
-                </tr>
-            </c:forEach>
-        </table>
-
+									<form action="savecity" method="post">
+										<div class="mb-3">
+											<label for="cityName" class="form-label">City Name</label> <input
+												type="text" class="form-control" id="cityName"
+												name="cityName" required> <br> State: <select
+												name="stateId">
+												<option>Select State</option>
+												<c:forEach items="${allState}" var="st">
+													<option value="${st.stateId}">${st.stateName}</option>
+												</c:forEach>
+											</select>
+										</div>
+										<button type="submit" class="btn btn-success">Submit</button>
+									</form>
 								</div>
 
 							</div>

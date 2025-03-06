@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	
+    pageEncoding="UTF-8"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 	
-	
-	
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,11 +21,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>EDIT-USER</h1>
 			<nav>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-					<li class="breadcrumb-item active">Dashboard</li>
+					<li class="breadcrumb-item"><a href="">Home</a></li>
+					<li class="breadcrumb-item active">Edit User</li>
 				</ol>
 			</nav>
 		</div>
@@ -48,20 +44,27 @@
 							 
 								<div class="card-body">
 									<h5 class="card-title">
-										list<span>City</span>
+										Reports <span>/Today</span>
 									</h5>
 
-					<table border="1">
-            <tr>
-                <th>City Name</th>
-            </tr>
-            <c:forEach items="${ListCity}" var="cl">
-                <tr>
-                    <td>${cl.cityName}</td>
- 
-                </tr>
-            </c:forEach>
-        </table>
+					 <form action="updateuser" method="post">
+        <input type="hidden" name="id" value="${us.id}" />
+
+        <label>First-Name:</label>
+        <input type="text" name="name" value="${us.firstName}" required /><br><br>
+        
+        <label>Last-Name:</label>
+        <input type="text" name="name" value="${us.lastName}" required /><br><br>
+        
+
+        <label>Email:</label>
+        <input type="email" name="email" value="${us.email}" required /><br><br>
+
+        <label>Phone:</label>
+        <input type="text" name="phone" value="${us.contactNum}" required /><br><br>
+
+        <button type="submit">Update</button>
+    </form>
 
 								</div>
 

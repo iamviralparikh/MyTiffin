@@ -5,20 +5,26 @@
 	<ul class="sidebar-nav" id="sidebar-nav">
 
 		<li class="nav-item"><a class="nav-link "> <i
-				class="bi bi-grid"></i> <span>Dashboard</span>
+				class="bi bi-grid"></i> <span>MENU</span>
 		</a></li>
-		<!-- End Dashboard Nav -->
+		<!-- End Profile Nav -->
 
 		<li class="nav-item"><a class="nav-link collapsed"
 			data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-				<i class="bi bi-person"></i><span>Users</span><i
+				<i class="bi bi-person"></i><span>Profile</span><i
 				class="bi bi-chevron-down ms-auto"></i>
 		</a>
 			<ul id="components-nav" class="nav-content collapse "
 				data-bs-parent="#sidebar-nav">
-				<li><a href="newuser"> <i class="bi bi-circle"></i><span>Add-User</span>
+				<li><a href=""> <i class="bi bi-circle"></i><span>City</span>
 				</a></li>
-				<li><a href="listuser"> <i class="bi bi-circle"></i><span>List-User</span>
+				<li><a href=""> <i class="bi bi-circle"></i><span>Area</span>
+				</a></li>
+				<li><a href=""> <i class="bi bi-circle"></i><span>Address</span>
+				</a></li>
+				<li><a href=""> <i class="bi bi-circle"></i><span>Order</span>
+				</a></li>
+				<li><a href=""> <i class="bi bi-circle"></i><span>Setting</span>
 				</a></li>
 			</ul></li>
 
@@ -30,7 +36,7 @@
 
 		<li class="nav-item"><a class="nav-link collapsed"
 			data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#"> <i
-				class="bi bi-gem"></i><span>State </span><i
+				class="bi bi-gem"></i><span></span><i
 				class="bi bi-chevron-down ms-auto"></i>
 		</a>
 			<ul id="icons-nav" class="nav-content collapse "
@@ -42,31 +48,25 @@
 				</a></li>
 				<li><a href="icons-boxicons.html"> <i class="bi bi-circle"></i><span>Boxicons</span>
 				</a></li>
-			</ul></li>
-
-		<li class="nav-item"><a class="nav-link"
-			data-bs-target="#components-nav" data-bs-toggle="collapse" href="">
-				<i class="bi bi-person"></i><span>City</span><i
-				class="bi bi-chevron-down ms-auto"></i>
-		</a>
-			<ul id="components-nav" class="nav-content collapse "
-				data-bs-parent="#sidebar-nav">
-				<li><a href="addcity"> <i class="bi bi-circle"></i><span>Add-City</span>
+				<li><a href="icons-boxicons.html"> <i class="bi bi-circle"></i><span>Boxicons</span>
 				</a></li>
-				<li><a href="listcity"> <i class="bi bi-circle"></i><span>List-City</span>
+				<li><a href="icons-boxicons.html"> <i class="bi bi-circle"></i><span>Boxicons</span>
+				</a></li>
+				<li><a href="icons-boxicons.html"> <i class="bi bi-circle"></i><span>Boxicons</span>
 				</a></li>
 			</ul></li>
 
+		
 		<!-- End Icons Nav -->
 
-		<li class="nav-heading">List Tables</li>
+		<!-- <li class="nav-heading">List Tables</li>
 
 		<li class="nav-item"><a class="nav-link collapsed"
 			href="listuser"> <i class="bi bi-person"></i><span>Users</span>
 		</a></li>
 		<!-- End Profile Page Nav -->
 
-		<li class="nav-item"><a class="nav-link collapsed"
+		<!-- <li class="nav-item"><a class="nav-link collapsed"
 			href="liststate"><i class="bi bi-building-fill"></i> <span>State</span>
 		</a></li>
 		<!-- End Profile Page Nav -->
