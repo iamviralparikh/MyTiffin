@@ -16,7 +16,7 @@
 		</a>
 			<ul id="components-nav" class="nav-content collapse "
 				data-bs-parent="#sidebar-nav">
-				<li><a href=""> <i class="bi bi-circle"></i><span>City</span>
+				<li><a href="viewcity"> <i class="bi bi-circle"></i><span>City</span>
 				</a></li>
 				<li><a href=""> <i class="bi bi-circle"></i><span>Area</span>
 				</a></li>
@@ -32,27 +32,20 @@
 		<!-- End Components Nav -->
 
 
-
-
 		<li class="nav-item"><a class="nav-link collapsed"
 			data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#"> <i
-				class="bi bi-gem"></i><span></span><i
+				class="bi bi-gear"></i><span>Setting</span><i
 				class="bi bi-chevron-down ms-auto"></i>
 		</a>
 			<ul id="icons-nav" class="nav-content collapse "
 				data-bs-parent="#sidebar-nav">
-				<li><a href="addState"> <i class="bi bi-circle"></i><span>Add State</span>
+				<li><a href="addState"> <i class="bi bi-circle"></i><span>Action</span>
 				</a></li>
-				<li><a href="icons-remix.html"> <i class="bi bi-circle"></i><span>Remix
-							Icons</span>
+				<li><a href=""> <i class="bi bi-circle"></i><span>History</span>
 				</a></li>
-				<li><a href="icons-boxicons.html"> <i class="bi bi-circle"></i><span>Boxicons</span>
+				<li><a href=""> <i class="bi bi-circle"></i><span>Payment</span>
 				</a></li>
-				<li><a href="icons-boxicons.html"> <i class="bi bi-circle"></i><span>Boxicons</span>
-				</a></li>
-				<li><a href="icons-boxicons.html"> <i class="bi bi-circle"></i><span>Boxicons</span>
-				</a></li>
-				<li><a href="icons-boxicons.html"> <i class="bi bi-circle"></i><span>Boxicons</span>
+				<li><a href=""> <i class="bi bi-circle"></i><span>WishList</span>
 				</a></li>
 			</ul></li>
 

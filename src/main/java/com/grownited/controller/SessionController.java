@@ -1,5 +1,8 @@
 package com.grownited.controller;
 
+import java.io.IOException;
+import java.util.Map;
+
 
 import java.security.PublicKey;
 import java.util.List;
@@ -13,7 +16,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import com.grownited.entity.UserEntity;
 import com.grownited.repository.UserRepository;
 import com.grownited.service.EmailService;
@@ -34,6 +40,9 @@ public class SessionController {
 	@Autowired
 	PasswordEncoder encodering;
 	
+	@Autowired
+	Cloudinary cloudinary;
+	
 	
 	@GetMapping(value={"/","signup"})
 	public String signup() {
@@ -46,22 +55,34 @@ public class SessionController {
 	} 
 	
 	@PostMapping("saveuser")
-	public String saveuser(UserEntity EntityUser){
-		//System.out.println(EntityUser.getUserId());
-		//System.out.println(EntityUser.getFirstName());
-		//System.out.println(EntityUser.getLastName());
-		//System.out.println(EntityUser.getEmail());
-		//System.out.println(EntityUser.getPassword());
-		//System.out.println(EntityUser.getContactNum());
-		//System.out.println(EntityUser.getGender());
-		//System.out.println(EntityUser.getRole());
-
-		String passwording = encodering.encode(EntityUser.getPassword());
-		EntityUser.setPassword(passwording);
+	public String saveuser(UserEntity EntityUser, MultipartFile profilePic){
+// cloud->
+		
+//		if(profilePic.getOriginalFilename().endsWith(".jpg") || || || ) {
+//			
+//		}else {
+//			//
+//			//model 
+//			return "Signup";
+//		}
+		try {
+			Map result = cloudinary.uploader().upload(profilePic.getBytes(), ObjectUtils.emptyMap());
+			//System.out.println(result);
+			System.out.println(result.get("url"));
+			EntityUser.setProfilePicPath(result.get("url").toString());
+		
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//String passwording = encodering.encode(EntityUser.getPassword());
+		//EntityUser.setPassword(passwording);
 		//First encryption always in the database
 		repositoryUser.save(EntityUser);
 		//Second save the database
-		emailService.sendWelcomeMail(EntityUser.getEmail(),EntityUser.getFirstName() );
+		//emailService.sendWelcomeMail(EntityUser.getEmail(),EntityUser.getFirstName() );
 		//3rd for mail
 		
 		

@@ -25,9 +25,7 @@ public class CityController {
 	@GetMapping("newcity")
 	public String newcity(Model model){
 		List<StateEntity> allState = repositoryState.findAll();// all state
-
 		model.addAttribute("allState", allState);
-		
 		return "NewCity";
 	}
 	

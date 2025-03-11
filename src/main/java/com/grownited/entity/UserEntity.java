@@ -24,7 +24,9 @@ public class UserEntity {
 	private String role;
 	private String createdAt;
 	private String status;
-	private String otp; 
+	private String otp;
+	private String profilePicPath;
+	
 	public Integer getUserId() {
 		return userId;
 	}
@@ -96,6 +98,12 @@ public class UserEntity {
 	}
 	public void setOtp(String otp) {
 		this.otp = otp;
+	}
+	public String getProfilePicPath() {
+		return profilePicPath;
+	}
+	public void setProfilePicPath(String profilePicPath) {
+		this.profilePicPath = profilePicPath;
 	}
 	
 	

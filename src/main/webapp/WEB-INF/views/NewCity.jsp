@@ -26,12 +26,9 @@
                     <div class="mb-3">
                         <label for="cityName" class="form-label">City Name</label>
                         <input type="text" class="form-control" id="cityName" name="cityName" required>
-                        <br> State: <select name="stateId">
-                        <option>Select State</option>
-                        <c:forEach items="${allState}" var="st">
-                <option value="${st.stateId}">${st.stateName}</option>
-            </c:forEach>
-                        </select>
+                        <label for="cityName" class="form-label">state id</label>
+                        <input type="text" class="form-control" id="cityName" name="stateId" required>
+                        
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>

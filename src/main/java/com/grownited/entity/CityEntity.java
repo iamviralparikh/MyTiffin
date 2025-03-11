@@ -14,7 +14,7 @@ public class CityEntity {
 	private Integer CityId;
 	private String cityName;
 	private Integer stateId;
-	private String stateName;
+
 	
 	public Integer getStateId() {
 		return stateId;
@@ -40,13 +40,6 @@ public class CityEntity {
 		this.cityName = cityName;
 	}
 
-	public String getStateName() {
-		return stateName;
-	}
-
-	public void setStateName(String stateName) {
-		this.stateName = stateName;
-	}
 	
 
 	

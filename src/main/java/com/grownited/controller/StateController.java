@@ -27,7 +27,7 @@ public class StateController {
 	public String savestate(StateEntity state) {
 		System.out.println(state.getStateName());
 		repositoryState.save(state);
-		return "redirect:/liststate";
+		return "redirect:/liststate"; //jsp
 	}
 	
 	
