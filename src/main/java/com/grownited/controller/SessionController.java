@@ -175,11 +175,6 @@ public class SessionController {
 		return "ViewUser";	
 	}
 	
-	@GetMapping("deleteuser")
-	public String deleteuser( Integer userId) {
-		repositoryUser.deleteById(userId);
-		return "redirect:/listuser";
-	}
 	
 	
 	@PostMapping("/authenticate")

@@ -23,9 +23,7 @@ public class CityController {
 	StateRepository  repositoryState;
 	
 	@GetMapping("newcity")
-	public String newcity(Model model){
-		List<StateEntity> allState = repositoryState.findAll();// all state
-		model.addAttribute("allState", allState);
+	public String newcity(){
 		return "NewCity";
 	}
 	

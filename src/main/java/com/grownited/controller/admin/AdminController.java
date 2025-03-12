@@ -8,7 +8,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.grownited.entity.StateEntity;
 import com.grownited.entity.UserEntity;
+import com.grownited.repository.CityRepositoty;
+import com.grownited.repository.StateRepository;
 import com.grownited.repository.UserRepository;
 
 @Controller
@@ -16,6 +19,12 @@ import com.grownited.repository.UserRepository;
 public class AdminController {
 	@Autowired
 	UserRepository repositoryUser;
+	
+	@Autowired
+	StateRepository repositoryState;
+	
+	@Autowired
+	CityRepositoty repositoryCity;
 	
 	@GetMapping("admindashboard")
 	public String admindashboard() {
@@ -29,8 +38,10 @@ public class AdminController {
 	
 	
 	@GetMapping("addcity")
-	public String addcity() {
-		
+	public String addcity(Model model) {
+
+		List<StateEntity> allState = repositoryState.findAll();// all state
+		model.addAttribute("allState", allState);
 		return "AddCity";
 	}
 	

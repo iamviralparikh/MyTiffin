@@ -18,15 +18,17 @@ public class StateController {
 	@Autowired
 	StateRepository repositoryState;
 	
+	
+	
 	@GetMapping("newstate")
 	public String newstate() {
 		return "NewState";///JSP FILE
 	}
 	
 	@PostMapping("savestate")
-	public String savestate(StateEntity state) {
-		System.out.println(state.getStateName());
-		repositoryState.save(state);
+	public String savestate(StateEntity stateEntity) {
+		//System.out.println(state.getStateName());
+		repositoryState.save(stateEntity);
 		return "redirect:/liststate"; //jsp
 	}
 	
@@ -35,10 +37,15 @@ public class StateController {
 	@GetMapping("liststate")
 	public String liststate(Model modelstate) {
 		List<StateEntity> statelisted = repositoryState.findAll() ;
-		modelstate.addAttribute("ListState", statelisted);
+		modelstate.addAttribute("allState", statelisted);
 		return "ListState";
 	}
 	
+	@GetMapping("deletestate")
+	public String deletestate(Integer stateId) {
 	
+		repositoryState.deleteById(stateId);
+		return "redirect:/liststate";
+	}
 	
 }

@@ -37,10 +37,7 @@
 				data-bs-parent="#sidebar-nav">
 				<li><a href="addState"> <i class="bi bi-circle"></i><span>Add State</span>
 				</a></li>
-				<li><a href="icons-remix.html"> <i class="bi bi-circle"></i><span>Remix
-							Icons</span>
-				</a></li>
-				<li><a href="icons-boxicons.html"> <i class="bi bi-circle"></i><span>Boxicons</span>
+				<li><a href="liststate"> <i class="bi bi-circle"></i><span>List State</span>
 				</a></li>
 			</ul></li>
 

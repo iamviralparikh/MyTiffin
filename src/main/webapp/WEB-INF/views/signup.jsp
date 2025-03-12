@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background: url('background_signup_login.jpg.') no-repeat center center fixed;
+             background-image: url("background_signup_login.jpg");
              background-size:cover;
             display: flex;
             justify-content: center;
@@ -63,7 +63,7 @@
         }
     </style>
 </head>
-<body>
+<body  style="background-image: url('background_signup_login.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
     <div class="signup-container">
     	<h2 class="text-center mb-4">MyTiffin</h2>
         <h2 class="text-center mb-4">Sign Up - A New Account</h2>
@@ -115,12 +115,11 @@
             </div>
             
             <div class="input-group mb-3">
-							<input type="file" class="form-control" placeholder="Profile"
-								name="profilePic" />
-							<div class="input-group-text">
-								<span class="bi bi-person-fill"></span>
-							</div>
-						</div>
+				<input type="file" class="form-control" placeholder="Profile" name="profilePic" />
+				<div class="input-group-text">
+				<span class="bi bi-person-fill"></span>
+			</div>
+		</div>
             
             <button type="submit" class="btn btn-primary w-100">Register</button>
         </form>

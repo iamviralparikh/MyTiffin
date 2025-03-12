@@ -53,4 +53,12 @@ public class UserController {
 		return "UpdateUser";
 	}
 	
+	
+
+	@GetMapping("deleteuser")
+	public String deleteuser( Integer userId) {
+		repositoryUser.deleteById(userId);
+		return "redirect:/listuser";
+	}
+	
 }

@@ -54,9 +54,14 @@ a
                     <div class="mb-3">
                         <label for="cityName" class="form-label">City Name</label>
                         <input type="text" class="form-control" id="cityName" name="cityName" required>
-                        <label for="cityName" class="form-label">state id</label>
-                        <input type="text" class="form-control" id="cityName" name="stateId" required>
-                        
+                        <!-- <label for="cityName" class="form-label">state id</label>
+                        <input type="text" class="form-control" id="cityName" name="stateId" required> -->
+                        State : <select name="stateId">
+						<option>Select State</option>
+							<c:forEach items="${allState}" var="s">
+								<option value="${s.stateId}">${s.stateName}</option>
+							</c:forEach>
+				</select>
                     </div>
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>
