@@ -34,22 +34,9 @@ public class UserController {
 		return "EditUser";
 	}
 	
-	@GetMapping("viewcity")
-	public String viewcity(Integer CityId , Model modelcity) {
-		///System.out.println("ID==>"+ userId );
-		Optional<CityEntity> op = repositorycity.findById(CityId);
-		if(op.isEmpty()) {
-			//not found
-		} else {
-			//found
-			CityEntity cityuser = op.get();
-			modelcity.addAttribute("city", cityuser);
-		}
-		
-		return "ViewCity";	//jsp
-	}
+	
 	@PostMapping("updateuser")
-	public String UpdateUSer() {
+	public String UpdateUser() {
 		return "UpdateUser";
 	}
 	
@@ -60,5 +47,23 @@ public class UserController {
 		repositoryUser.deleteById(userId);
 		return "redirect:/listuser";
 	}
+	
+	
+	
+	@GetMapping("viewuser")
+	public String viewuser(Integer userId , Model modeluser) {
+		System.out.println("ID==>"+ userId );
+		Optional<UserEntity> op = repositoryUser.findById(userId);
+		if(op.isEmpty()) {
+			//not found
+		} else {
+			//found
+			UserEntity user = op.get();
+			modeluser.addAttribute("user", user);
+		}
+		
+		return "ViewUser";	
+	}
+	
 	
 }

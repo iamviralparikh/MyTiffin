@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -36,35 +36,26 @@
 
 				<!-- Left side columns -->
 				<div class="col-lg-12">
-					<div class="row" >
+					<div class="row">
 						<!-- Reports -->
 						<div class="col-12">
 							<div class="card">
 
-							 
+
 								<div class="card-body">
 									<h5 class="card-title">
 										Reports <span>/Today</span>
 									</h5>
 
-					 <form action="updateuser" method="post">
-        <input type="hidden" name="id" value="${us.id}" />
+									<form action="updatestate" method="post">
+										<input type="hidden" name="stateId" value="${State.stateId}">
 
-        <label>First-Name:</label>
-        <input type="text" name="name" value="${user.firstName}"  /><br><br>
-        
-        <label>Last-Name:</label>
-        <input type="text" name="name" value="${user.lastName}"  /><br><br>
-        
+										<label>State-Name:</label> 
+										<input type="text" name="stateName" value="${State.stateName}"><br>
+										<br>
 
-        <label>Email:</label>
-        <input type="email" name="email" value="${user.email}"  /><br><br>
-
-        <label>Phone:</label>
-        <input type="text" name="phone" value="${user.contactNum}"i /><br><br>
-
-        <button type="submit">Update</button>
-    </form>
+										<button type="submit">Update</button>
+									</form>
 
 								</div>
 

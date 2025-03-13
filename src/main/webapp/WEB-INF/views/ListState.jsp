@@ -51,8 +51,8 @@
                         <tr>
                             <td>${st.stateName}</td>
                             <td>
-                                <a href="" class="btn btn-sm btn-info">View</a>
-                                <a href="" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="viewstate?stateId=${st.stateId}" class="btn btn-sm btn-info">View</a>
+                                <a href="editstate?stateId=${st.stateId}" class="btn btn-sm btn-warning">Edit</a>
                                 <a href="deletestate?stateId=${st.stateId}" class="btn btn-sm btn-danger">Delete</a>
                             </td>
                         </tr>

@@ -159,21 +159,6 @@ public class SessionController {
 	
 		
 		
-		
-	@GetMapping("viewuser")
-	public String viewuser(Integer userId , Model modeluser) {
-		System.out.println("ID==>"+ userId );
-		Optional<UserEntity> op = repositoryUser.findById(userId);
-		if(op.isEmpty()) {
-			//not found
-		} else {
-			//found
-			UserEntity user = op.get();
-			modeluser.addAttribute("user", user);
-		}
-		
-		return "ViewUser";	
-	}
 	
 	
 	

@@ -12,5 +12,5 @@ import com.grownited.entity.CityEntity;
 @Repository
 public interface CityRepositoty extends JpaRepository<CityEntity, Integer> {
 	
-	//@Query(value="select c.* , s.state_name from city c , state s where c.state_id=s.state_id",nativeQuery = true)
+	//@Query(value="SELECT c.*, s.state_name FROM city c, state s WHERE c.state_id = s.state_id", nativeQuery = true)
 }
