@@ -1,6 +1,7 @@
 package com.grownited.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,6 +45,56 @@ public class CityController {
 	
 	}
 	
+	
+	@GetMapping("deletecity")
+	public String deletecity(Integer CityId) {
+		repositorycity.deleteById(CityId);
+		return "redirect:/listcity";
+	}
+
+	@GetMapping("editcity")
+	public String editcity(Integer CityId, Model modelcity) {
+		Optional<CityEntity> op = repositorycity.findById(CityId);
+		if (op.isEmpty()) {
+			return "redirect:/listcity";
+		} else {
+			modelcity.addAttribute("city", op.get());
+			return "EditCity";
+
+		}
+	}
+
+	@GetMapping("viewcity")
+	public String viewcity(Integer CityId, Model modelcity) {
+		//System.out.println("ID==>" + CityId);
+		Optional<CityEntity> op = repositorycity.findById(CityId);
+		if (op.isEmpty()) {
+			// not found
+			return "ViewCity";
+		} else {
+			// found
+			CityEntity city1 = op.get();
+			List<Object[]> city = repositorycity.getAll(city1.getStateId());
+			modelcity.addAttribute("city", city);
+				
+			return "ViewCity";
+		}
+
+	}
+
+	@PostMapping("updatecity")
+	public String Updatecity(CityEntity cityentity) {
+		System.out.println("City id: " + cityentity.getStateId());
+		Optional<CityEntity> op = repositorycity.findById(cityentity.getCityId());
+
+		if (op.isPresent()) {
+			CityEntity dbcity = op.get(); // pcode vhreg type id userId
+			dbcity.setCityName(cityentity.getCityName());  
+			repositorycity.save(dbcity);
+		}
+		return "redirect:/listcity";
+	}
+
 	
 }
 

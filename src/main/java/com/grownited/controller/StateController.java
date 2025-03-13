@@ -45,7 +45,7 @@ public class StateController {
 	}
 
 	@GetMapping("editstate")
-	public String editVehicle(Integer stateId, Model modelstate) {
+	public String editstate(Integer stateId, Model modelstate) {
 		Optional<StateEntity> op = repositoryState.findById(stateId);
 		if (op.isEmpty()) {
 			return "redirect:/liststate";

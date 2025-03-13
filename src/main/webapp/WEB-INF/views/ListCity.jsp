@@ -3,8 +3,7 @@
 	
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 	
-	
-	
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,56 +28,44 @@
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-					<li class="breadcrumb-item active">Dashboard</li>
+					<li class="breadcrumb-item active">List User</li>
 				</ol>
 			</nav>
 		</div>
-		<!-- End Page Title -->
+	<!--	 End Page Title -->
 
-		<section class="section dashboard">
-			<div class="row" style="min-height: 500px;">
+			<div class="card-body">
+              	<h5 class="card-title">Data-tables</h5>
+              	
 
-				<!-- Left side columns -->
-				<div class="col-lg-12">
-					<div class="row" >
-						<!-- Reports -->
-						<div class="col-12">
-							<div class="card">
+              <!-- Table with stripped rows -->
+    			<table border="1" class="table table-hover">
+					<thead>
+                    <tr>
+                        <th>City Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${ListCity}" var="ct">
+                        <tr>
+                            <td>${ct.cityName}</td>
+                            <td>
+                                <a href="viewcity?CityId=${ct.cityId}" class="btn btn-sm btn-info">View</a>
+                                <a href="editcity?CityId=${ct.cityId}" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="deletecity?CityId=${ct.cityId}" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+				</table>
+    			
+              <!-- End Table with stripped rows -->
 
-							 
-								<div class="card-body">
-									<h5 class="card-title">
-										list<span>City</span>
-									</h5>
+            </div>
 
-					<table border="1">
-            <tr>
-                <th>City Name</th>
-            </tr>
-            <c:forEach items="${ListCity}" var="cl">
-                <tr>
-                    <td>${cl.cityName}</td>
- 
-                </tr>
-            </c:forEach>
-        </table>
 
-								</div>
-
-							</div>
-						</div>
-						<!-- End Reports -->
-
-					</div>
-				</div>
-				<!-- End Left side columns -->
-
-				<!-- Right side columns -->
-				<!-- End Right side columns -->
-
-			</div>
-		</section>
-
+			
 	</main>
 	<!-- main content end  -->
 
