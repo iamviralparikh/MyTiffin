@@ -9,19 +9,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>View State</title>
+<title>View Area</title>
 </head>
 <body>
 	<h1>View State</h1>
 	<table border=1>
 	<tr>
-		<th>State Name:</th>
+		<th>Area Name:</th>
 		<!-- <th>city Name</th> -->
 	</tr>
 	<tr>
-	<td>${state.stateName}</td>
+	<td>$(area.areaName)</td>
 	<!-- <td>${city.cityName}</td> -->
 	</tr>
 	</table>
-</body>$
+</body>
 </html>

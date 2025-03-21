@@ -6,10 +6,29 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>New State</title>
+<title>Area</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
-
+<style>
+.btn {
+            display: inline-block;
+            padding: 2px 4px;
+            background-color: #ff9800; /* Orange */
+            color: #012970;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 25px;
+            transition: 0.3s;
+            text-align: center;
+            border: none;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #e65100; /* Dark Orange */
+        }
+        
+        
+</style>
 
 </head>
 <body>
@@ -24,7 +43,7 @@
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-					<li class="breadcrumb-item active">Dashboard</li>
+					<li class="breadcrumb-item active">User</li>
 				</ol>
 			</nav>
 		</div>
@@ -41,25 +60,29 @@
 							<div class="card">
 
 							 
+								<!-- <div class="card-body">
+									<h5 class="card-title">
+										Add <span>user</span>
+									</h5>
+										<a href="edituser" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">Add User</a><br>
+										</div>
+								 -->
 								<div class="card-body">
 									<h5 class="card-title">
-										Reports <span>/Today</span>
+										Add <span>Area</span>
 									</h5>
-<form action="savestate" method="post">
-
-            <!-- State Name -->
-            <div class="mb-3">
-                <label for="stateName" class="form-label">State Name</label>
-                <input type="text" class="form-control" id="stateName" name="stateName" required>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary w-100">Save State</button>
-
-        </form>
-
+										
+										<a href="newarea" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">Add Area</a><br>
+								
 								</div>
-
+									
+								<div class="card-body">
+									<h5 class="card-title">
+										List <span>Area</span>
+									</h5>
+										<a href="listarea" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">List Area</a><br>
+								
+								</div>	
 							</div>
 						</div>
 						<!-- End Reports -->

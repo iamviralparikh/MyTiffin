@@ -22,7 +22,6 @@ public class CategoryController {
 	@PostMapping("savecategory")
 	public String savecategory(CategoryEntity entitycategory) {
 		System.out.println(entitycategory.getCategoryName());
-		System.out.println(entitycategory.getIsActive());
 		repocitorycategory.save(entitycategory);
 		return "NewCategory";
 		

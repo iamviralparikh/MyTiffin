@@ -1,73 +1,75 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <aside id="sidebar" class="sidebar">
 
-	<ul class="sidebar-nav" id="sidebar-nav">
+    <ul class="sidebar-nav" id="sidebar-nav">
 
-		<li class="nav-item"><a class="nav-link "> <i
-				class="bi bi-grid"></i> <span>Dashboard</span>
-		</a></li>
-		<!-- End Dashboard Nav -->
+        <li class="nav-item">
+            <a class="nav-link" href="admindashboard">
+                <i class="bi bi-grid"></i> <span>Dashboard</span>
+            </a>
+        </li>
 
-		<li class="nav-item"><a class="nav-link collapsed"
-			data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-				<i class="bi bi-person"></i><span>Users</span><i
-				class="bi bi-chevron-down ms-auto"></i>
-		</a>
-			<ul id="components-nav" class="nav-content collapse "
-				data-bs-parent="#sidebar-nav">
-				<li><a href="newuser"> <i class="bi bi-circle"></i><span>Add-User</span>
-				</a></li>
-				<li><a href="listuser"> <i class="bi bi-circle"></i><span>List-User</span>
-				</a></li>
-			</ul></li>
+        <li class="nav-item">
+            <a class="nav-link" href="displayuser">
+                <i class="bi bi-person"></i> <span>Users</span>
+            </a>
+        </li>
 
-           
-		<!-- End Components Nav -->
+        <li class="nav-item">
+            <a class="nav-link" href="displaystate">
+                <i class="bi bi-gem"></i> <span>States</span>
+            </a>
+        </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href="displaycity">
+                <i class="bi bi-building"></i> <span>Cities</span>
+            </a>
+        </li>
+		
+		
+		<li class="nav-item">
+            <a class="nav-link" href="displayarea">
+                <i class="bi bi-bag-check"></i> <span>Area</span>
+            </a>
+        </li>
+			
 
+		
+		
+        <li class="nav-item">
+            <a class="nav-link" href="listproduct">
+                <i class="bi bi-box"></i> <span>Products</span>
+            </a>
+        </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href="cart">
+                <i class="bi bi-cart"></i> <span>Cart</span>
+            </a>
+        </li>
 
-		<li class="nav-item"><a class="nav-link collapsed"
-			data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#"> <i
-				class="bi bi-gem"></i><span>State </span><i
-				class="bi bi-chevron-down ms-auto"></i>
-		</a>
-			<ul id="icons-nav" class="nav-content collapse "
-				data-bs-parent="#sidebar-nav">
-				<li><a href="addState"> <i class="bi bi-circle"></i><span>Add State</span>
-				</a></li>
-				<li><a href="liststate"> <i class="bi bi-circle"></i><span>List State</span>
-				</a></li>
-			</ul></li>
+        <li class="nav-item">
+            <a class="nav-link" href="listorder">
+                <i class="bi bi-bag-check"></i> <span>Orders</span>
+            </a>
+        </li>
 
-		<li class="nav-item"><a class="nav-link"
-			data-bs-target="#components-nav" data-bs-toggle="collapse" href="">
-				<i class="bi bi-person"></i><span>City</span><i
-				class="bi bi-chevron-down ms-auto"></i>
-		</a>
-			<ul id="components-nav" class="nav-content collapse "
-				data-bs-parent="#sidebar-nav">
-				<li><a href="addcity"> <i class="bi bi-circle"></i><span>Add-City</span>
-				</a></li>
-				<li><a href="listcity"> <i class="bi bi-circle"></i><span>List-City</span>
-				</a></li>
-			</ul></li>
+        <li class="nav-item">
+            <a class="nav-link" href="wishlist">
+                <i class="bi bi-heart"></i> <span>Wishlist</span>
+            </a>
+        </li>
 
-		<!-- End Icons Nav -->
+        <li class="nav-item">
+            <a class="nav-link" href="ratings">
+                <i class="bi bi-star"></i> <span>Ratings & Reviews</span>
+            </a>
+        </li>
 
-		<li class="nav-heading">List Tables</li>
+        
 
-		<li class="nav-item"><a class="nav-link collapsed"
-			href="listuser"> <i class="bi bi-person"></i><span>Users</span>
-		</a></li>
-		<!-- End Profile Page Nav -->
-
-		<li class="nav-item"><a class="nav-link collapsed"
-			href="liststate"><i class="bi bi-building-fill"></i> <span>State</span>
-		</a></li>
-		<!-- End Profile Page Nav -->
-
-	</ul>
+    </ul>
 
 </aside>

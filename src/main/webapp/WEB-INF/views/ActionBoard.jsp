@@ -10,11 +10,30 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>User-Dashboard</title>
+<title>Action</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
-
+<style>
+.btn {
+            display: inline-block;
+            padding: 2px 4px;
+            background-color: #ff9800; /* Orange */
+            color: #012970;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 25px;
+            transition: 0.3s;
+            text-align: center;
+            border: none;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #e65100; /* Dark Orange */
+        }
+        
+        
+</style> 
 </head>
 <body>
 	<jsp:include page="AdminHeader.jsp"></jsp:include>
@@ -24,12 +43,12 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Jay Shree Krishna!!!</h1>
+			<h1>Action!!!</h1>
 		
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">Home</li>
-					<li class="breadcrumb-item active">Profile</li>
+					<li class="breadcrumb-item active">Action</li>
 				</ol>
 			</nav>
 		</div>
@@ -92,12 +111,27 @@
 
 								<div class="card-body">
 									<h5 class="card-title">
-										Your Profile Here!! <span></span>
+										Your Action Here!! <span></span>
 									</h5>
 		
-        
-    </div>
-</div>
+     							<table border="1" class="table table-hover">
+					<thead>
+                    <tr>
+                        <th>List Of Action</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>1.State</td>
+                            <td>
+                                <a href="liststate" class="btn btn-sm btn-info">View</a>
+                            </td>
+                        </tr>
+                    
+                </tbody>
+				</table>
 
               <!-- End Default Table Example -->
 									<br> <br> <br> <br>

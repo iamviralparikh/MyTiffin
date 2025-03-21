@@ -95,7 +95,10 @@ public class CityController {
 		return "redirect:/listcity";
 	}
 
-	
+	@GetMapping("displaycity")
+	public String displaycity() {
+		return "displaycity";
+	}
 }
 
 

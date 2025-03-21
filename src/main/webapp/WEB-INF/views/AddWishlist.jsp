@@ -1,13 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>New State</title>
-
+<title>Add Wishlist</title>
+a
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
 
@@ -24,7 +29,7 @@
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-					<li class="breadcrumb-item active">Dashboard</li>
+					<li class="breadcrumb-item active">Wishlist</li>
 				</ol>
 			</nav>
 		</div>
@@ -35,29 +40,31 @@
 
 				<!-- Left side columns -->
 				<div class="col-lg-12">
-					<div class="row" >
+					<div class="row">
 						<!-- Reports -->
 						<div class="col-12">
 							<div class="card">
 
-							 
+
 								<div class="card-body">
 									<h5 class="card-title">
-										Reports <span>/Today</span>
+										New<span>City</span>
 									</h5>
-<form action="savestate" method="post">
-
-            <!-- State Name -->
-            <div class="mb-3">
-                <label for="stateName" class="form-label">State Name</label>
-                <input type="text" class="form-control" id="stateName" name="stateName" required>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary w-100">Save State</button>
-
-        </form>
-
+									<form action="savecity" method="post">
+                    <div class="mb-3">
+                        <label for="cityName" class="form-label">City Name</label>
+                        <input type="text" class="form-control" id="cityName" name="cityName" required>
+                        <!-- <label for="cityName" class="form-label">state id</label>
+                        <input type="text" class="form-control" id="cityName" name="stateId" required> -->
+                        State : <select name="stateId">
+						<option>Select State</option>
+							<c:forEach items="$" var="wl">
+								<option value="${s.stateId}">${s.stateName}</option>
+							</c:forEach>
+				</select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
 								</div>
 
 							</div>

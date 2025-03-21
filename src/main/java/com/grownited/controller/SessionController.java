@@ -77,8 +77,8 @@ public class SessionController {
 			e.printStackTrace();
 		}
 		
-		//String passwording = encodering.encode(EntityUser.getPassword());
-		//EntityUser.setPassword(passwording);
+		String passwording = encodering.encode(EntityUser.getPassword());
+		EntityUser.setPassword(passwording);
 		//First encryption always in the database
 		repositoryUser.save(EntityUser);
 		//Second save the database

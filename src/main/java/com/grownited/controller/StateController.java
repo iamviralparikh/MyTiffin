@@ -18,7 +18,11 @@ public class StateController {
 	@Autowired
 	StateRepository repositoryState;
 
-
+	@GetMapping("addstate")
+	public String addstate() {
+		return "NewState";/// JSP FILE
+	}
+	
 	@GetMapping("newstate")
 	public String newstate() {
 		return "NewState";/// JSP FILE
@@ -57,7 +61,7 @@ public class StateController {
 	}
 
 	@GetMapping("viewstate")
-	public String viewuser(Integer stateId, Model modelstate) {
+	public String viewstate(Integer stateId, Model modelstate) {
 		System.out.println("ID==>" + stateId);
 		Optional<StateEntity> op = repositoryState.findById(stateId);
 		if (op.isEmpty()) {

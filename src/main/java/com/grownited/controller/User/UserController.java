@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.grownited.entity.CityEntity;
 import com.grownited.entity.UserEntity;
@@ -20,8 +21,6 @@ public class UserController {
 	@Autowired
 	UserRepository repositoryUser;
 	
-	@Autowired
-	CityRepositoty repositorycity;
 	
 
 	@GetMapping("home")
@@ -30,14 +29,39 @@ public class UserController {
 	}
 	
 	@GetMapping("edituser")
-	public String edituser() {
-		return "EditUser";
+	public String edituser(@RequestParam("userId") Integer userId ,Model modeluser) {
+		Optional<UserEntity> op = repositoryUser.findById(userId);
+		if(op.isEmpty()) {
+			return "redirect:/listuser";
+		}else {
+			modeluser.addAttribute("user",op.get());
+			return "Edituser";
+		}
+	
 	}
 	
+	@GetMapping("displayuser")
+	public String displayuser() {
+		return "displayuser";
+	}
 	
 	@PostMapping("updateuser")
-	public String UpdateUser() {
-		return "UpdateUser";
+	public String updateuser(UserEntity entityuser) {//pcode vhreg type vid 
+		
+		System.out.println("User ID"+ entityuser.getUserId());//id? db? 
+
+		Optional<UserEntity> op = repositoryUser.findById(entityuser.getUserId());
+		
+		if(op.isPresent())
+		{
+			UserEntity dbuser = op.get(); //pcode vhreg type id userId 
+			dbuser.setFirstName(entityuser.getFirstName());  
+			dbuser.setLastName(entityuser.getLastName());//setParkingCode(vehicleEntity.getParkingCode());//code 
+			//dbVehicle.setVehicleType(vehicleEntity.getVehicleType());//type 
+			
+			repositoryUser.save(dbuser);
+		}
+		return "redirect:/listuser";
 	}
 	
 	
@@ -65,5 +89,10 @@ public class UserController {
 		return "ViewUser";	
 	}
 	
+	
+	@GetMapping("actionboard")
+	public String actionboard() {
+		return "ActionBoard";
+	}
 	
 }

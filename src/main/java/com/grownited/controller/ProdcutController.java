@@ -9,4 +9,10 @@ public class ProdcutController {
 	public String newproduct() {
 		return "NewProduct";//JSP FILE
 	}
+	
+	@GetMapping("product")
+	public String product() {
+		return "Product";//JSP FILE
+	}
+	
 }

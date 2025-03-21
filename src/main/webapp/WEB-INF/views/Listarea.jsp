@@ -10,7 +10,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>List State </title>
+<title>List Area </title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
@@ -28,7 +28,7 @@
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-					<li class="breadcrumb-item active">List State</li>
+					<li class="breadcrumb-item active">List Area</li>
 				</ol>
 			</nav>
 		</div>
@@ -42,18 +42,18 @@
     			<table border="1" class="table table-hover">
 					<thead>
                     <tr>
-                        <th>State Name</th>
+                        <th>Area Name</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach items="${allState}" var="st">
+                    <c:forEach items="${allArea}" var="ar">
                         <tr>
-                            <td>${st.stateName}</td>
+                            <td>${ar.areaName}</td>
                             <td>
-                                <a href="viewstate?stateId=${st.stateId}" class="btn btn-sm btn-info">View</a>
-                                <a href="editstate?stateId=${st.stateId}" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="deletestate?stateId=${st.stateId}" class="btn btn-sm btn-danger">Delete</a>
+                                <a href="viewarea?areaId=${ar.areaId}" class="btn btn-sm btn-info">View</a>
+                                <a href="editarea?areaId=${ar.areaId}" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="deletearea?areaId=${ar.areaId}" class="btn btn-sm btn-danger">Delete</a>
                             </td>
                         </tr>
                     </c:forEach>

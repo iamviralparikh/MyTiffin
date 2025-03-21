@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>New State</title>
+<title>New Area</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
@@ -45,16 +45,16 @@
 									<h5 class="card-title">
 										Reports <span>/Today</span>
 									</h5>
-<form action="savestate" method="post">
+<form action="savearea" method="post">
 
             <!-- State Name -->
             <div class="mb-3">
-                <label for="stateName" class="form-label">State Name</label>
-                <input type="text" class="form-control" id="stateName" name="stateName" required>
+                <label for="areaName" class="form-label">area Name</label>
+                <input type="text" class="form-control" id="areaName" name="areaName" >
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary w-100">Save State</button>
+            <button type="submit" class="btn btn-primary w-100">Save Area</button>
 
         </form>
 

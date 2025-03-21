@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>New State</title>
+<title>Edit Area</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
@@ -20,11 +21,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>EDIT-Area</h1>
 			<nav>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-					<li class="breadcrumb-item active">Dashboard</li>
+					<li class="breadcrumb-item"><a href="">Home</a></li>
+					<li class="breadcrumb-item active">Edit Area</li>
 				</ol>
 			</nav>
 		</div>
@@ -35,28 +36,26 @@
 
 				<!-- Left side columns -->
 				<div class="col-lg-12">
-					<div class="row" >
+					<div class="row">
 						<!-- Reports -->
 						<div class="col-12">
 							<div class="card">
 
-							 
+
 								<div class="card-body">
 									<h5 class="card-title">
-										Reports <span>/Today</span>
+										Edit <span>/area</span>
 									</h5>
-<form action="savestate" method="post">
 
-            <!-- State Name -->
-            <div class="mb-3">
-                <label for="stateName" class="form-label">State Name</label>
-                <input type="text" class="form-control" id="stateName" name="stateName" required>
-            </div>
+									<form action="updatearea" method="post">
+										<input type="hidden" name="areaId" value="${area.areaId}">
 
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary w-100">Save State</button>
+										<label>Area-Name:</label> 
+										<input type="text" name="areaName" value="${area.areaName}"><br>
+										<br>
 
-        </form>
+										<button type="submit">Update</button>
+									</form>
 
 								</div>
 
