@@ -67,14 +67,19 @@ public class CityController {
 	@GetMapping("viewcity")
 	public String viewcity(Integer CityId, Model modelcity) {
 		//System.out.println("ID==>" + CityId);
-		Optional<CityEntity> op = repositorycity.findById(CityId);
-		if (op.isEmpty()) {
+		//Optional<CityEntity> op = repositorycity.findById(CityId);
+		List<Object[]> city = repositorycity.getAll();
+		
+		//Optional<CityEntity> op = repositorycity.findById(CityId);
+		if (city.isEmpty()) {
 			// not found
 			return "ViewCity";
 		} else {
 			// found
-			CityEntity city1 = op.get();
-			List<Object[]> city = repositorycity.getAll(city1.getStateId());
+			//CityEntity city1 = op.get();
+			//System.out.println(city1.getStateId());
+			
+			//System.out.println(city);
 			modelcity.addAttribute("city", city);
 				
 			return "ViewCity";

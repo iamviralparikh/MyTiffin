@@ -29,13 +29,13 @@ public class UserController {
 	}
 	
 	@GetMapping("edituser")
-	public String edituser(@RequestParam("userId") Integer userId ,Model modeluser) {
+	public String edituser( Integer userId ,Model modeluser) {
 		Optional<UserEntity> op = repositoryUser.findById(userId);
 		if(op.isEmpty()) {
 			return "redirect:/listuser";
 		}else {
 			modeluser.addAttribute("user",op.get());
-			return "Edituser";
+			return "EditUser";
 		}
 	
 	}
@@ -46,11 +46,11 @@ public class UserController {
 	}
 	
 	@PostMapping("updateuser")
-	public String updateuser(UserEntity entityuser) {//pcode vhreg type vid 
+	public String updateuser(UserEntity entityuser , int id) {//pcode vhreg type vid 
 		
 		System.out.println("User ID"+ entityuser.getUserId());//id? db? 
 
-		Optional<UserEntity> op = repositoryUser.findById(entityuser.getUserId());
+		Optional<UserEntity> op = repositoryUser.findById(id);
 		
 		if(op.isPresent())
 		{

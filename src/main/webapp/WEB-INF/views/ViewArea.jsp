@@ -19,7 +19,7 @@
 		<!-- <th>city Name</th> -->
 	</tr>
 	<tr>
-	<td>$(area.areaName)</td>
+	<td>${area.areaName}</td>
 	<!-- <td>${city.cityName}</td> -->
 	</tr>
 	</table>

@@ -47,9 +47,9 @@
 									</h5>
 
 
-										City Name:  ${city[0][0]} <br>
+										City Name:  ${city[0][1]} <br>
 										</br>
-										State Name: ${city[0][1]}
+										State Name: ${city.get(0)[3]}
 
 								</div>
 

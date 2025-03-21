@@ -69,9 +69,10 @@ public class AreaController {
 		} else {
 			// found
 			AreaEntity area = op.get();
+		
 			modelarea.addAttribute("area", area);
 		}
-
+	
 		return "ViewArea";
 	}
 

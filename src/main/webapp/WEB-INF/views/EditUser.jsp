@@ -47,21 +47,21 @@
 										Reports <span>/Today</span>
 									</h5>
 
-					 <form action="updateuser" method="post">
+					 <form action="updateuser?userId=${user.userId}" method="post">
         <input type="hidden" name="id" value="${user.userId}" />
 
         <label>First-Name:</label>
-        <input type="text" name="firstname" value="${user.firstName}"  /><br><br>
+        <input type="text" name="firstName" value="${user.firstName}"  /><br><br>
         
         <label>Last-Name:</label>
-        <input type="text" name="lastname" value="${user.lastName}"  /><br><br>
+        <input type="text" name="lastName" value="${user.lastName}"  /><br><br>
         
 
         <label>Email:</label>
         <input type="email" name="email" value="${user.email}"  /><br><br>
 
         <label>Phone:</label>
-        <input type="text" name="phone" value="${user.contactNum}" /><br><br>
+        <input type="text" name="contactNum" value="${user.contactNum}" /><br><br>
 
         <button type="submit">Update</button>
     </form>
