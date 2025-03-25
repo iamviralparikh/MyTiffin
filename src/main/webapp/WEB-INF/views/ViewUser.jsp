@@ -21,6 +21,7 @@
 		<th>Mobile Number:</th>
 		<th>Gender:</th>
 		<th>Date Of Birth</th>
+		<th>Address</th>
 	</tr>
 	<tr>
 	<td>${user.firstName}</td>
@@ -29,7 +30,7 @@
 	<td>${user.contactNum}</td>
 	<td>${user.gender}</td>
 	<td>${user.dob}</td>
-	
+	<td>${user.dob}</td>
 	<tr>
 	</table>
 </body>

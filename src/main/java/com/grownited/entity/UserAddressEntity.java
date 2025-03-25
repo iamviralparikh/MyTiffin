@@ -12,8 +12,8 @@ public class UserAddressEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer userAddressId;
-	private Integer userId;
-	private String title;
+	private Integer userId;//fk
+	private String title;//home,office,any
 	private String unitName;
 	private String street;
 	private String landMark;

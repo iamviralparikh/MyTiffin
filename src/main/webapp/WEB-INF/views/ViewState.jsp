@@ -23,5 +23,5 @@
 	<!-- <td>${city.cityName}</td> -->
 	</tr>
 	</table>
-</body>$
+</body>
 </html>

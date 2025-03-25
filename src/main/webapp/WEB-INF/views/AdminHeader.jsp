@@ -17,7 +17,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center" style="background-color: #FF5F15;">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="AdminDashboard" class="logo d-flex align-items-center">
+      <a href="admindashboard" class="logo d-flex align-items-center">
         <img src="assets/img/MyTiffin-LOGO.png" alt="">
         <span class="d-none d-lg-block">MyTiffin</span>
       </a>

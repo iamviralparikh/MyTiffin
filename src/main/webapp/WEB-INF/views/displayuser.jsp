@@ -67,14 +67,14 @@
 										<a href="edituser" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">Add User</a><br>
 										</div>
 								 -->
+								
 								<div class="card-body">
 									<h5 class="card-title">
-										Edit <span>user</span>
+										List <span>user's Address</span>
 									</h5>
-										
-										<a href="edituser" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">Edit User</a><br>
+										<a href="listuseraddress" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">List User's Address</a><br>
 								
-								</div>
+								</div>	
 									
 								<div class="card-body">
 									<h5 class="card-title">

@@ -13,9 +13,8 @@
 				CityName : <input type="text" name="cityName"/><br><br> 
 				State : <select name="stateId">
 					<option>Select State</option>
-					<c:forEach items="${allstate}" var="st">
-					
-							<option value="${st.stateId}">${s.newState}</option>
+					<c:forEach items="${allState1}" var="st">
+							<option value="${st.stateId}">${s.stateName}</option>
 					
 					</c:forEach>
 				

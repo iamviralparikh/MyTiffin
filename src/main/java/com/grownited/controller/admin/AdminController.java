@@ -45,4 +45,8 @@ public class AdminController {
 		return "AddCity";
 	}
 	
+	@GetMapping("displaystate")
+	public String displaystate() {
+		return "displaystate";
+	}
 }

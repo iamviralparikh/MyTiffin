@@ -35,6 +35,16 @@
             </a>
         </li>
 			
+<li class="nav-item">
+    <a class="nav-link" href="displaycategory">
+        <i class="bi bi-list"></i> <span>Categories</span>
+    </a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="subcategories">
+        <i class="bi bi-list-nested"></i> <span>Subcategories</span>
+    </a>
+</li>
 
 		
 		
@@ -44,14 +54,10 @@
             </a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="cart">
-                <i class="bi bi-cart"></i> <span>Cart</span>
-            </a>
-        </li>
+
 
         <li class="nav-item">
-            <a class="nav-link" href="listorder">
+            <a class="nav-link" href="orderadmin">
                 <i class="bi bi-bag-check"></i> <span>Orders</span>
             </a>
         </li>
@@ -68,7 +74,11 @@
             </a>
         </li>
 
-        
+                <li class="nav-item">
+            <a class="nav-link" href="profile">
+                <i class="bi bi-person"></i> <span>Profile</span>
+            </a>
+        </li>
 
     </ul>
 
