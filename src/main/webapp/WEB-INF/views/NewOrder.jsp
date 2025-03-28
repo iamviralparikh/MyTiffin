@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+a<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 
@@ -12,7 +12,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 <title>Dashboard</title>
-
+a
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
 
@@ -48,23 +48,11 @@
 
 								<div class="card-body">
 									<h5 class="card-title">
-										New<span>City</span>
+										New<span>Order</span>
 									</h5>
-									<form action="savecity" method="post">
-                    <div class="mb-3">
-                        <label for="cityName" class="form-label">City Name</label>
-                        <input type="text" class="form-control" id="cityName" name="cityName" required>
-                        <!-- <label for="cityName" class="form-label">state id</label>
-                        <input type="text" class="form-control" id="cityName" name="stateId" required> -->
-                        State : <select name="stateId">
-						<option>Select State</option>
-							<c:forEach items="${allState}" var="s">
-								<option value="${s.stateId}">${s.stateName}</option>
-							</c:forEach>
-				</select>
-                    </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                </form>
+									<form action="saveorder" method="post">
+									</form>
+                   
 								</div>
 
 							</div>

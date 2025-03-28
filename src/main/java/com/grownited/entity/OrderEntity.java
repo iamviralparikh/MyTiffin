@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 public class OrderEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer orderId;		
+	private Integer orderId;   //pk		
 	private Integer userId;   //fk=user		
 	private String status;	//pending , shipped , delievered , cancel , etc		
 	private Integer	totalAmount;

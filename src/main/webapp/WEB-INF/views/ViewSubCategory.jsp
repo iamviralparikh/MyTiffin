@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,11 +20,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>MyTiffin</h1>
 			<nav>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">Dashboard</li>
+					<li class="breadcrumb-item"><a href="">Home</a></li>
+					<li class="breadcrumb-item active">Sub Category</li>
 				</ol>
 			</nav>
 		</div>
@@ -40,7 +35,7 @@
 
 				<!-- Left side columns -->
 				<div class="col-lg-12">
-					<div class="row">
+					<div class="row" >
 						<!-- Reports -->
 						<div class="col-12">
 							<div class="card">
@@ -48,23 +43,14 @@
 
 								<div class="card-body">
 									<h5 class="card-title">
-										New<span>City</span>
+										View<span>Sub Category</span>
 									</h5>
-									<form action="savecity" method="post">
-                    <div class="mb-3">
-                        <label for="cityName" class="form-label">City Name</label>
-                        <input type="text" class="form-control" id="cityName" name="cityName" required>
-                        <!-- <label for="cityName" class="form-label">state id</label>
-                        <input type="text" class="form-control" id="cityName" name="stateId" required> -->
-                        State : <select name="stateId">
-						<option>Select State</option>
-							<c:forEach items="${allState}" var="s">
-								<option value="${s.stateId}">${s.stateName}</option>
-							</c:forEach>
-				</select>
-                    </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                </form>
+
+									   Sub Category Name:  ${viewsubc[2]} <br>
+										</br>
+										Category Name: ${viewsubc[3]}
+									
+										
 								</div>
 
 							</div>

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 	
 
@@ -27,7 +26,7 @@
 			<h1>Dashboard</h1>
 			<nav>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item"><a href="">Home</a></li>
 					<li class="breadcrumb-item active">List User</li>
 				</ol>
 			</nav>
@@ -42,18 +41,18 @@
     			<table border="1" class="table table-hover">
 					<thead>
                     <tr>
-                        <th>Citya Name</th>
+                        <th>Sub Category Name</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach items="${ListCity}" var="ct">
+                    <c:forEach items="${ListSC}" var="sb">
                         <tr>
-                            <td>${ct.cityName}</td>
+                            <td>${sb[2]}</td>
                             <td>
-                                <a href="viewcity?CityId=${ct.cityId}" class="btn btn-sm btn-info">View</a>
-                                <a href="editcity?CityId=${ct.cityId}" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="deletecity?CityId=${ct.cityId}" class="btn btn-sm btn-danger">Delete</a>
+                            	<a href="viewsubcategory?subcategoryId=${sb[0]}" class="btn btn-sm btn-info">View</a>
+                                <a href="editsubcategory?subcategoryId=${sb[0]}" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="deletesubcategory?subcategoryId=${sb[0]}" class="btn btn-sm btn-danger">Delete</a>
                             </td>
                         </tr>
                     </c:forEach>

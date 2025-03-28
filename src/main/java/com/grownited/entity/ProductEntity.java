@@ -1,6 +1,8 @@
 package com.grownited.entity;
 
 
+import java.sql.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,7 +20,7 @@ public class ProductEntity {
     private String productName;
     
     private Integer categoryId;  //fk=user
-    private Integer subCategoryId;  //fk=product
+    private Integer subcategoryId;  //fk=product
 
     private Double basePrice;
     private Double offerPrice;
@@ -27,7 +29,11 @@ public class ProductEntity {
     private String productImageURL1;
     private String productImageURL2;
     private String productImageURL3;
-    private Integer quantity;  //fk=user
+    private Integer quantity;  //fk=user 
+    private Date createdBy;
+    
+    
+    
 	public Long getProductId() {
 		return productId;
 	}
@@ -46,11 +52,11 @@ public class ProductEntity {
 	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
 	}
-	public Integer getSubCategoryId() {
-		return subCategoryId;
+	public Integer getSubcategoryId() {
+		return subcategoryId;
 	}
-	public void setSubCategoryId(Integer subCategoryId) {
-		this.subCategoryId = subCategoryId;
+	public void setSubcategoryId(Integer subcategoryId) {
+		this.subcategoryId = subcategoryId;
 	}
 	public Double getBasePrice() {
 		return basePrice;
@@ -100,8 +106,15 @@ public class ProductEntity {
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
-
+	public Date getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(Date createdBy) {
+		this.createdBy = createdBy;
+	}
     
+    
+	   
     
     
     

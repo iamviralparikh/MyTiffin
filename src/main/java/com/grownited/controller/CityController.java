@@ -43,7 +43,6 @@ public class CityController {
 		List<CityEntity> citylisted = repositorycity.findAll();
 		modelcity.addAttribute("ListCity", citylisted);
 		return "ListCity"; // JSP FILe
-	
 	}
 	
 	
@@ -69,7 +68,7 @@ public class CityController {
 	public String viewcity(Integer CityId, Model modelcity) {
 		//System.out.println("ID==>" + CityId);
 		//Optional<CityEntity> op = repositorycity.findById(CityId);
-		List<Object[]> city = repositorycity.getAll();
+		List<Object[]> city = repositorycity.getBycityId(CityId);
 		
 		//Optional<CityEntity> op = repositorycity.findById(CityId);
 		if (city.isEmpty()) {
@@ -81,7 +80,7 @@ public class CityController {
 			//System.out.println(city1.getStateId());
 			
 			//System.out.println(city);
-			modelcity.addAttribute("city", city);
+			modelcity.addAttribute("city", city.get(0));
 				
 			return "ViewCity";
 		}
@@ -90,7 +89,7 @@ public class CityController {
 
 	@PostMapping("updatecity")
 	public String Updatecity(CityEntity cityentity) {
-		System.out.println("City id: " + cityentity.getStateId());
+		//System.out.println("City id: " + cityentity.getStateId());
 		Optional<CityEntity> op = repositorycity.findById(cityentity.getCityId());
 
 		if (op.isPresent()) {

@@ -5,8 +5,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class CartController {
-	@GetMapping("order")
-	public String order() {
-		return "Order";
+	@GetMapping("addtocart")
+	public String addtocart() {
+		return "NewCart";
 	}
+
+	
+	@GetMapping("displaycart")
+	public String displaycart() {
+		return "displaycart";
+	}
+
+
+
+
 }
+
+
+

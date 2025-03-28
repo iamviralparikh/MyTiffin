@@ -47,8 +47,8 @@
 										Edit <span>/city</span>
 									</h5>
 
-									<form action="updatestate" method="post">
-										<input type="hidden" name="stateId" value="${city.cityId}">
+									<form action="updatecity" method="post">
+										<input type="hidden" name="cityId" value="${city.cityId}">
 
 										<label>City-Name:</label> 
 										<input type="text" name="cityName" value="${city.cityName}"><br>

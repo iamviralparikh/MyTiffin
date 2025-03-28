@@ -1,17 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Dashboard</title>
+<title>Edit City</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
@@ -25,11 +21,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>EDIT-City</h1>
 			<nav>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="#">Home</a></li>
-					<li class="breadcrumb-item active">Dashboard</li>
+					<li class="breadcrumb-item"><a href="">Home</a></li>
+					<li class="breadcrumb-item active">Edit repositiory</li>
 				</ol>
 			</nav>
 		</div>
@@ -48,23 +44,19 @@
 
 								<div class="card-body">
 									<h5 class="card-title">
-										New<span>City</span>
+										Edit <span>/subcategory</span>
 									</h5>
-									<form action="savecity" method="post">
-                    <div class="mb-3">
-                        <label for="cityName" class="form-label">City Name</label>
-                        <input type="text" class="form-control" id="cityName" name="cityName" required>
-                        <!-- <label for="cityName" class="form-label">state id</label>
-                        <input type="text" class="form-control" id="cityName" name="stateId" required> -->
-                        State : <select name="stateId">
-						<option>Select State</option>
-							<c:forEach items="${allState}" var="s">
-								<option value="${s.stateId}">${s.stateName}</option>
-							</c:forEach>
-				</select>
-                    </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                </form>
+
+									<form action="updatesubcategory" method="post">
+										
+										<label>Subcategory-Name:</label> 
+										<input type="text" name="subCategoryName" value="${subcategory[2]}"><br>
+										<br>
+											<input type="hidden" name="subcategoryId" value="${subcategory[0]}">
+											
+										<button type="submit">Update</button>
+									</form>
+
 								</div>
 
 							</div>

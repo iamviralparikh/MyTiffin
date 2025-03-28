@@ -13,4 +13,7 @@ public interface CityRepositoty extends JpaRepository<CityEntity, Integer> {
 	
 	@Query(value="SELECT ct.*, st.state_name FROM city ct, state st WHERE ct.state_Id = st.state_Id", nativeQuery = true)
 	List<Object[]> getAll();
+	
+	@Query(value="SELECT ct.*, st.state_name FROM city ct, state st WHERE ct.state_Id = st.state_Id and ct.city_id=:cityId", nativeQuery = true)
+	List<Object[]> getBycityId(Integer cityId);
 }
