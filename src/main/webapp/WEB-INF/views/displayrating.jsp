@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>State</title>
+<title>Dashboard</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 <style>
@@ -45,7 +45,8 @@
         .mr-10 {
             margin-left: 50px;
             margin-right: 950px;
-        }
+        } 
+        
 </style>
 
 </head>
@@ -60,8 +61,8 @@
 			<h1>Dashboard</h1>
 			<nav>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-					<li class="breadcrumb-item active">Cart</li>
+					<li class="breadcrumb-item"><a href="admindashborad">Home</a></li>
+					<li class="breadcrumb-item active">Reviews & Ratings</li>
 				</ol>
 			</nav>
 		</div>
@@ -85,25 +86,19 @@
 										<a href="edituser" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">Add User</a><br>
 										</div>
 								 -->
-								<!-- <div class="card-body">
-									<h5 class="card-title">
-										Add <span>Cart</span>
-									</h5>
-										
-										<a href="newcategory" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">Add category</a><br>
 								
-								</div>
-									 -->
-			<br>
+								<br>
 			 <a href="admindashboard" class="btn-linked btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
 		
+				
+									
 								<div class="card-body">
 									<h5 class="card-title">
-										List <span>cart</span>
+										List <span>user'Review & Rating</span>
 									</h5>
-										<a href="listcart" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">List cart</a><br>
+										<a href="listuseraddress" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">List Review & Ratings </a><br>
 								
-								</div>	
+								</div>		
 							</div>
 						</div>
 						<!-- End Reports -->

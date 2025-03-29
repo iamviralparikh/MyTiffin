@@ -26,7 +26,25 @@
         .btn:hover {
             background-color: #e65100; /* Dark Orange */
         }
-        
+        .btn-linked {
+            padding: 8px 12px;
+            background-color: orange;
+            color: #012970;
+            text-decoration: none;
+            font-size: 14px;
+            text-align: center;
+            border-radius: 40px;
+        }
+        .btn-linked-back:hover {
+            background-color: #e65100;
+        }
+        .ml-10 {
+            margin-left: 35px;
+        }
+        .mr-10 {
+            margin-left: 50px;
+            margin-right: 950px;
+        }
         
 </style>
 
@@ -66,7 +84,9 @@
 									</h5>
 										<a href="edituser" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">Add User</a><br>
 										</div>
-								 -->
+								 --><br>
+			 <a href="admindashboard" class="btn-linked btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
+		
 								<div class="card-body">
 									<h5 class="card-title">
 										Add <span>Sub Category</span>

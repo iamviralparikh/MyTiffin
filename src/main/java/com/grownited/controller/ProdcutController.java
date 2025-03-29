@@ -1,13 +1,18 @@
 package com.grownited.controller;
 
+import java.io.IOException;
 import java.util.List;
 
+import org.hibernate.mapping.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import com.grownited.entity.CategoryEntity;
 import com.grownited.entity.CityEntity;
 import com.grownited.entity.ProductEntity;
@@ -39,9 +44,17 @@ public class ProdcutController {
 	}
 	
 	@PostMapping("saveproduct")
-	public String saveproduct(ProductEntity entitypro) {
-		// System.out.println(entitycity.getCityName()); 
+	public String saveproduct(ProductEntity entitypro,MultipartFile productfile) {
+		// System.out.println(entitycity.getCityName());
+		System.out.println(productfile.getOriginalFilename());
+//		try {
+//			Map results = Cloudinary.uploader().upload(productfile.getBytes() , ObjectUtils.emptyMap());
+//			entitypro.setProductImageURL1(results.get("url").toString());
+//		}catch(IOException err){
+//			err.printStackTrace();
+//		}
 		repositoryproduct.save(entitypro);
+		
 		return "redirect:/listproduct";
 	}
 	

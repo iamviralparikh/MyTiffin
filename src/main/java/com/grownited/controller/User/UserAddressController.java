@@ -104,5 +104,9 @@ public class UserAddressController {
 		}
 		return "redirect:/listuseraddress";
 	}
-//
+
+	@GetMapping("displayuseraddress")
+	public String displayuseraddress() {
+		return "displayuseraddress";
+	}
 }
