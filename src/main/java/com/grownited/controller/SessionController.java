@@ -176,7 +176,7 @@ public class SessionController {
                 if ("ADMIN".equals(dbUser.getRole())) {
                     return "redirect:/admindashboard";
                 } else if ("USER".equals(dbUser.getRole())) {
-                    return "redirect:/home";
+                    return "redirect:/usermanage";
                 }
                 	else if ("VENDOR".equals(dbUser.getRole())) {
                     return "redirect:/vendordashboard";

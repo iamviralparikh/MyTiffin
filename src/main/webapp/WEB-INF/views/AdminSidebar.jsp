@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <style>
+  .nav-link {
+        
+        border-radius: 50px; /* Fully rounded corners */
+        
+    }  
+
+</style>   
+
 <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">

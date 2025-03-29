@@ -7,5 +7,5 @@ import com.grownited.entity.UserAddressEntity;
 
 @Repository
 public interface UserAddressRepository extends JpaRepository<UserAddressEntity, Integer> {
-
+	//select u.* , a.area_name from user_address u,area a where u.area_id=a.area_id;
 }

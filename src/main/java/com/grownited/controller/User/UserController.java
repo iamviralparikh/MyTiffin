@@ -1,7 +1,6 @@
 package com.grownited.controller.User;
 
 import java.io.IOException;
-import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +33,11 @@ public class UserController {
 	@GetMapping("home")
 	public String home() {
 		return "UserDashboard";
+	}
+	
+	@GetMapping("usermanage")
+	public String usermanage() {
+		return "usermanage";
 	}
 	
 	@GetMapping("edituser")

@@ -42,7 +42,14 @@ public class ProdcutController {
 	public String saveproduct(ProductEntity entitypro) {
 		// System.out.println(entitycity.getCityName()); 
 		repositoryproduct.save(entitypro);
-		return "redirect:/listcity";
+		return "redirect:/listproduct";
+	}
+	
+	@GetMapping("listproduct")
+	public String listprodcut(Model modelpro){
+		List<ProductEntity> prolisted = repositoryproduct.findAll();
+		modelpro.addAttribute("ListProduct", prolisted);
+		return "ListProduct"; // JSP FILe
 	}
 	
 	@GetMapping("displayproduct")
@@ -50,5 +57,18 @@ public class ProdcutController {
 		return "displayproduct";//JSP FILE
 	}
 	
+	@GetMapping("deleteproduct")
+	public String deleteproduct(Integer productId) {
+		repositoryproduct.deleteById(productId);
+		return "redirect:/listproduct";
+	}
+	
+	
+	@GetMapping("viewproduct")
+	public String viewproduct(Integer productId, Model modelview) {
+		System.out.println("Product-ID"+ productId );
+		//List<Object[]> product = repositoryproduct.getByproductId(productId)
+		return "viewproduct";
+	}
 	
 }

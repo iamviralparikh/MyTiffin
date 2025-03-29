@@ -685,15 +685,15 @@ h6 {
   font-size: 15px;
   font-weight: 600;
   transition: 0.3;
-  background: #f6f9ff;
+  background: #FF8C00;
   padding: 10px 15px;
-  border-radius: 4px;
+  border-radius: 25px;
 }
 
 .sidebar-nav .nav-link i {
   font-size: 16px;
   margin-right: 10px;
-  color: #4154f1;
+  color: #000000;
 }
 
 .sidebar-nav .nav-link.collapsed {
@@ -706,7 +706,7 @@ h6 {
 }
 
 .sidebar-nav .nav-link:hover {
-  color: #4154f1;
+  color: #012970;
   background: #f6f9ff;
 }
 

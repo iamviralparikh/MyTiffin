@@ -27,8 +27,8 @@
 			<h1>Dashboard</h1>
 			<nav>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-					<li class="breadcrumb-item active">List City</li>
+					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item active">List Product</li>
 				</ol>
 			</nav>
 		</div>
@@ -42,18 +42,18 @@
     			<table border="1" class="table table-hover">
 					<thead>
                     <tr>
-                        <th>City Name</th>
+                        <th>Product Name</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach items="${ListCity}" var="ct">
+                    <c:forEach items="${ListProduct}" var="lp">
                         <tr>
-                            <td>${ct.cityName}</td>
+                            <td>${lp.productName}</td>
                             <td>
-                                <a href="viewcity?CityId=${ct.cityId}" class="btn btn-sm btn-info">View</a>
-                                <a href="editcity?CityId=${ct.cityId}" class="btn btn-sm btn-warning">Edit</a>
-                                <a href="deletecity?CityId=${ct.cityId}" class="btn btn-sm btn-danger">Delete</a>
+                                <a href="viewproduct?productId=${lp.productId}" class="btn btn-sm btn-info">View</a>
+                                <a href="editprouct?productId=${lp.productId}" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="deleteproduct?productId=${lp.productId}" class="btn btn-sm btn-danger">Delete</a>
                             </td>
                         </tr>
                     </c:forEach>

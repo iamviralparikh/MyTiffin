@@ -5,7 +5,18 @@
 .bi-list::before {
     content: "\f479";
 }
+        body {
 
+            margin-right: 50px;
+            font-family: Arial, sans-serif;
+        }
+         h2 {
+            margin-right: 50px;
+            text-align: right;
+            font-family: Arial, sans-serif;
+            display: block;
+        }
+ 
 
 @media (min-width: 1200px) {
     #main, #footer {
@@ -38,7 +49,27 @@
           <a class="nav-link nav-icon search-bar-toggle " href="#">
             <i class="bi bi-search"></i>
           </a>
-        </li><!-- End Search Icon-->
+        </li>
+        
+        
+         
+</head>
+<body>
+
+	<h2>Hey! ${user.firstName } ${user.lastName}</h2>
+    <h2 id="date"></h2>
+    <h2 id="time"></h2>
+
+    <script>
+        function updateDateTime() {
+            let now = new Date();
+            document.getElementById("date").innerText = now.toLocaleDateString();
+            document.getElementById("time").innerText = now.toLocaleTimeString();
+        }
+        setInterval(updateDateTime, 1000);
+        updateDateTime(); // Initial call
+    </script>
+        <!-- End Search Icon-->
 
 
         <li class="nav-item dropdown pe-3">
