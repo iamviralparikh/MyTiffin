@@ -86,7 +86,7 @@
 										List <span>/ User Address</span>
 									</h5>
                <a href="addusersaddress" class="btn-link ml-10"><i class="bi bi-plus"></i> Add New Address</a>  
-    <a href="listuseraddress" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
+    <a href="displayuseraddress" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
 	<br>
 	<br><!-- class="table table-bordered border-primary"  --> 
 <table border="1" class="table datatable datatable-table table-hover" id="myTable">
