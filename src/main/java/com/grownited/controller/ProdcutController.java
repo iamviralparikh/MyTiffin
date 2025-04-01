@@ -2,8 +2,9 @@ package com.grownited.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
-import org.hibernate.mapping.Map;
+//import org.hibernate.mapping.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +34,9 @@ public class ProdcutController {
 	@Autowired
 	SubcategoryRepository repocitorysubcategory;
 	
+	@Autowired
+	Cloudinary cloudinary;
+	
 	@GetMapping("newproduct")
 	public String newproduct(Model model) {
 		List<CategoryEntity> categorylisted = repocitorycategory.findAll();
@@ -44,23 +48,29 @@ public class ProdcutController {
 	}
 	
 	@PostMapping("saveproduct")
-	public String saveproduct(ProductEntity entitypro,MultipartFile productfile) {
+	public String saveproduct(ProductEntity entitypro,MultipartFile productImage,MultipartFile productImage2) {
 		// System.out.println(entitycity.getCityName());
-		System.out.println(productfile.getOriginalFilename());
-//		try {
-//			Map results = Cloudinary.uploader().upload(productfile.getBytes() , ObjectUtils.emptyMap());
-//			entitypro.setProductImageURL1(results.get("url").toString());
-//		}catch(IOException err){
-//			err.printStackTrace();
-//		}
+		System.out.println(productImage.getOriginalFilename());
+		try {
+			Map results = cloudinary.uploader().upload(productImage.getBytes() , ObjectUtils.emptyMap());
+			entitypro.setProductImageURL1(results.get("url").toString());
+		}catch(IOException err){
+			err.printStackTrace();
+		}
+		try {
+			Map results1 = cloudinary.uploader().upload(productImage2.getBytes() , ObjectUtils.emptyMap());
+			entitypro.setProductImageURL2(results1.get("url").toString());
+		}catch(IOException err){
+			err.printStackTrace();
+		}
 		repositoryproduct.save(entitypro);
 		
 		return "redirect:/listproduct";
 	}
-	
+	// Je return thaay che ae java.util.map chhe hibernate no map nathi
 	@GetMapping("listproduct")
 	public String listprodcut(Model modelpro){
-		List<ProductEntity> prolisted = repositoryproduct.findAll();
+		List<Object[]> prolisted = repositoryproduct.getAll();
 		modelpro.addAttribute("ListProduct", prolisted);
 		return "ListProduct"; // JSP FILe
 	}
@@ -81,6 +91,9 @@ public class ProdcutController {
 	public String viewproduct(Integer productId, Model modelview) {
 		System.out.println("Product-ID"+ productId );
 		//List<Object[]> product = repositoryproduct.getByproductId(productId)
+		List<Object[]> product = repositoryproduct.getprodCatSubCat(productId);
+		System.out.println(product);
+		modelview.addAttribute("productDetail" , product);
 		return "viewproduct";
 	}
 	

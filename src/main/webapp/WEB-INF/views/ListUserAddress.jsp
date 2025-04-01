@@ -116,8 +116,8 @@
                     <td>${usadd.zipCode}</td>
                     <td>
                         <a href="viewuseraddress?userAddressId=${usadd.userAddressId}"class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a> 
-                        <a href="edituseraddress?userAddressId=${usadd.userAddressId}"class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a> 
-                        <a href="deleteuseraddress?userAddressId=${usadd.userAddressId}" class="btn btn-sm btn-danger" ><i class="bi bi-trash"></i>-Delete</a>
+                       <!--  <a href="edituseraddress?userAddressId=${usadd.userAddressId}"class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a>  
+                        <a href="deleteuseraddress?userAddressId=${usadd.userAddressId}" class="btn btn-sm btn-danger" ><i class="bi bi-trash"></i>-Delete</a>-->
                     </td>
                 </tr>
             </c:forEach>

@@ -117,7 +117,9 @@
 	<td>${user.gender}</td>
 	<td>${user.dob}</td>
 	<td>${user.dob}</td>
-	<td>${user.profilePicPath}</td>
+	<td>
+	 	<img src="${user.profilePicPath}" height="100px">
+	</td>
 	<tr>
 	</tbody>
 	</table>

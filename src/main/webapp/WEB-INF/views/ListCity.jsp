@@ -101,12 +101,12 @@
                 <tbody>
                     <c:forEach items="${ListCity}" var="ct">
                         <tr>
-                            <td>${ct.cityName}</td>
-                            <td>-</td>
+                            <td>${ct[1]}</td>
+                            <td>${ct[3]}</td>
                             <td>
-                                <a href="viewcity?CityId=${ct.cityId}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a>
-                                <a href="editcity?CityId=${ct.cityId}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a>
-                                <a href="deletecity?CityId=${ct.cityId}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i>-Delete</a>
+                                <a href="viewcity?CityId=${ct[0]}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a>
+                                <a href="editcity?CityId=${ct[0]}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a>
+                                <a href="deletecity?CityId=${ct[0]}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i>-Delete</a>
                             </td>
                         </tr>
                     </c:forEach>

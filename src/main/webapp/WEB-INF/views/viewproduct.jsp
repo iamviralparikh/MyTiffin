@@ -47,11 +47,11 @@
 									</h5>
 
 
-										Product Name:  ${city[1]} <br>
+										Product Name:  ${productDetail[0][0]} <br>
 										<br>
-										Category Name: ${city[3]}<br>
+										Category Name: ${productDetail[0][1]}<br>
 										<br>
-										Sub-Category Name: ${city[3]}
+										Sub-Category Name: ${productDetail[0][2]}
 										
 
 								</div>

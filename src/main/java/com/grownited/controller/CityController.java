@@ -39,9 +39,11 @@ public class CityController {
 	}
 	
 	@GetMapping("listcity")
-	public String listcity(Model modelcity){
-		List<CityEntity> citylisted = repositorycity.findAll();
-		modelcity.addAttribute("ListCity", citylisted);
+	public String listcity(Model model){
+		List<Object[]> citylisted = repositorycity.getAll();
+//		List<StateEntity> statelisted = repositoryState.findAll();
+//		model.addAttribute("ListCity", statelisted);
+		model.addAttribute("ListCity", citylisted);
 		return "ListCity"; // JSP FILe
 	}
 	

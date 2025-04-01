@@ -73,23 +73,29 @@
     <a href="displayproduct" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
 	<br>
 	<br>
-                            <table id="myTable" class="table datatable datatable-table table-hover" id="myTable">
+                            <table class="table datatable datatable-table table-hover" id="myTable">
                                 <thead>
                                     <tr>
                                         <th>Product Name</th>
+                                        <th>Subcategory</th>
+                                        <th>category</th>
+                                        <th>Photo-1</th>
+                                        <th>Photo-2</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <c:forEach items="${ListProduct}" var="lp">
                                         <tr>
-                                            <td>${lp.productName}</td>
+                                            <td>${lp[9]}</td>
+                                            <td>${lp[14]}</td>
+                                            <td>${lp[13]}</td>
+                                            <td><img src="${lp[6]}" height="100px"></td>
+                                            <td><img src="${lp[7]}" height="100px"></td>
                                             <td>
-                                                <a href="viewproduct?productId=${lp.productId}" class="btn btn-sm btn-info">View</a>
-                                                <a href="editproduct?productId=${lp.productId}" class="btn btn-sm btn-warning">Edit</a>
-                                                <a href="deleteproduct?productId=${lp.productId}" class="btn btn-sm btn-danger">Delete</a>
+                                                <a href="viewproduct?productId=${lp[0]}">View</a>
                                             </td>
-                                        </tr>
+                                        </tr><!-- features doc batay toh abstract -->
                                     </c:forEach>
                                 </tbody>
                             </table>
