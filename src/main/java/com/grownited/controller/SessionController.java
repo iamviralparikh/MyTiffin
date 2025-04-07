@@ -44,12 +44,12 @@ public class SessionController {
 	Cloudinary cloudinary;
 	
 	
-	@GetMapping(value={"/","signup"})
+	@GetMapping("signup")
 	public String signup() {
 		return "signup";
 	}
 	
-	@GetMapping("login")
+	@GetMapping(value={"/","login"})
 	public String login() {
 		return "login";
 	} 
@@ -176,7 +176,7 @@ public class SessionController {
                 if ("ADMIN".equals(dbUser.getRole())) {
                     return "redirect:/admindashboard";
                 } else if ("USER".equals(dbUser.getRole())) {
-                    return "redirect:/usermanage";
+                    return "redirect:/home";
                 }
                 	else if ("VENDOR".equals(dbUser.getRole())) {
                     return "redirect:/vendordashboard";

@@ -24,11 +24,11 @@
                 <i class="bi bi-person"></i> <span>Users</span>
             </a>
         </li>
-		<li class="nav-item">
+		<!-- <li class="nav-item">
             <a class="nav-link" href="displayuseraddress">
                 <i class="bi bi-person"></i> <span>User's Address</span>
             </a>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a class="nav-link" href="displaystate">
                 <i class="bi bi-gem"></i> <span>States</span>
@@ -67,7 +67,7 @@
             </a>
         </li>
 
-
+<!--   
 
         <li class="nav-item">
             <a class="nav-link" href="displaycart">
@@ -83,16 +83,22 @@
 
         <li class="nav-item">
             <a class="nav-link" href="displayratings">
-                <i class="bi bi-star"></i> <span>Ratings & Reviews</span>
+                <i class="bi bi-star"></i> <span>List-Ratings & Reviews</span>
             </a>
         </li>
-
-<!--                 <li class="nav-item">
-            <a class="nav-link" href="profile">
-                <i class="bi bi-person"></i> <span>Profile</span>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="displayuseraddress">
+                <i class="bi bi-person"></i> <span>List-User's Address</span>
             </a>
         </li>
  -->
+              <li class="nav-item">
+            <a class="nav-link" href="profile">
+                <i class="bi bi-person"></i> <span>Account</span>
+            </a>
+        </li>
+
 		
 
     </ul>

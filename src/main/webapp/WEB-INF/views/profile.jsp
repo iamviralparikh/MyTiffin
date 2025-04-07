@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,11 +21,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>EDIT-USER</h1>
+			<h1>Dashboard</h1>
 			<nav>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="">Home</a></li>
-					<li class="breadcrumb-item active">Edit User</li>
+					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item active">Dashboard</li>
 				</ol>
 			</nav>
 		</div>
@@ -47,35 +47,16 @@
 										Reports <span>/Today</span>
 									</h5>
 
-					 <form action="updateuser?userId=${user.userId}" method="post" encType = "multipart/form-data">
-        <input type="hidden" name="id" value="${user.userId}" />
-
-        <label>First-Name:</label>
-        <input type="text" name="firstName" value="${user.firstName}"  /><br><br>
-        
-        <label>Last-Name:</label>
-        <input type="text" name="lastName" value="${user.lastName}"  /><br><br>
-        
-
-        <label>Email:</label>
-        <input type="email" name="email" value="${user.email}"  disabled/><br><br>
-
-        <label>Phone:</label>
-        <input type="text" name="contactNum" value="${user.contactNum}" /><br><br>
-
-		<label>Photo:</label>
-		<img src = "${user.profilePicPath}" height="100px" width="100px">
-        <input type="file" name="profilePic" value="${user.profilePicPath}" /><br><br>
-			
-        <button type="submit">Update</button>
-    </form>
+					<br><br>
+					<br><br>
+					
 
 								</div>
 
 							</div>
 						</div>
 						<!-- End Reports -->
-            
+
 					</div>
 				</div>
 				<!-- End Left side columns -->
@@ -95,3 +76,4 @@
 	<jsp:include page="AdminJs.jsp"></jsp:include>
 </body>
 </html>
+

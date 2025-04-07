@@ -56,7 +56,8 @@
 
 										<label for="productName" class="form-label">Product
 											Name</label> <input type="text" class="form-control" id="productName"
-											name="productName"> Category : <select
+											name="productName"> 
+											Category : <select
 											name="categoryId">
 											<option>Select Category</option>
 											<c:forEach items="${allCategory}" var="ct">

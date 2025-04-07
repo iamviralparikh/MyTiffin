@@ -103,7 +103,7 @@
                         <tr>
                             <td>${st.stateName}</td>
                             <td>
-                                <a href="viewstate?stateId=${st.stateId}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a>
+                                <!-- <a href="viewstate?stateId=${st.stateId}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a> -->
                                 <a href="editstate?stateId=${st.stateId}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a>
                                 <a href="deletestate?stateId=${st.stateId}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i>-Delete</a>
                             </td>

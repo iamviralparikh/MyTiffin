@@ -92,7 +92,6 @@
 					<thead>
                     <tr>
                         <th>Category Name</th>
-                        <th>Sub-Category</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -100,9 +99,8 @@
                     <c:forEach items="${allCategory}" var="ct">
                         <tr>
                             <td>${ct.categoryName}</td>
-                            <td>-</td>
+                            
                             <td>
-                                <a href="viewcategory?categoryId=${ct.categoryId}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a>
                                 <a href="editcategory?categoryId=${ct.categoryId}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a>
                                 <a href="deletecategory?categoryId=${ct.categoryId}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i>-Delete</a>
                             </td>

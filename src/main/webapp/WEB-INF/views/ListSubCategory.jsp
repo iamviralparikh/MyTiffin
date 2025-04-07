@@ -83,7 +83,7 @@
 
 			<div class="card-body">
               	<h5 class="card-title">Data-tables</h5>
-              	       <a href="addsubcategory" class="btn-link ml-10"><i class="bi bi-plus"></i> Add Sub Category</a>  
+              	       <a href="newsubcategory" class="btn-link ml-10"><i class="bi bi-plus"></i> Add Sub Category</a>  
     <a href="displaysubcategory" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
 	<br>
 	<br>
@@ -93,6 +93,7 @@
 					<thead>
                     <tr>
                         <th>Sub Category Name</th>
+                        <th>Category Name</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -100,6 +101,7 @@
                     <c:forEach items="${ListSC}" var="sb">
                         <tr>
                             <td>${sb[2]}</td>
+                            <td>${sb[3]}</td>
                             <td>
                             	<a href="viewsubcategory?subcategoryId=${sb[0]}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a>
                                 <a href="editsubcategory?subcategoryId=${sb[0]}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a>

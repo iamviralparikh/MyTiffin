@@ -10,7 +10,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.grownited.entity.AreaEntity;
+import com.grownited.entity.CategoryEntity;
+import com.grownited.entity.CityEntity;
+import com.grownited.entity.StateEntity;
+import com.grownited.entity.SubcategoryEntity;
 import com.grownited.repository.AreaRepository;
+import com.grownited.repository.CityRepositoty;
+import com.grownited.repository.StateRepository;
 
 @Controller
 public class AreaController {
@@ -18,13 +24,24 @@ public class AreaController {
 	@Autowired
 	AreaRepository repositoryarea;
 	
+	@Autowired
+	CityRepositoty repocity;
+	
+	@Autowired
+	StateRepository repostate;
+	
 	@GetMapping("addarea")
 	public String addarea() {
 		return "NewArea";/// JSP FILE
 	}
 	
 	@GetMapping("newarea")
-	public String newarea() {
+	public String newarea(Model model ) {
+		List<CityEntity> citylisted = repocity.findAll();
+		model.addAttribute("allCity1", citylisted);
+		List<StateEntity> statelisted = repostate.findAll();
+		model.addAttribute("allStateCity", statelisted);
+		
 		return "NewArea";/// JSP FILE
 	}
 
@@ -37,7 +54,8 @@ public class AreaController {
 
 	@GetMapping("listarea")
 	public String liststate(Model modelarea) {
-		List<AreaEntity> arealisted = repositoryarea.findAll();
+		List<Object[]> arealisted = repositoryarea.getareacitystate();
+		System.out.println(arealisted.get(0)[0]);
 		modelarea.addAttribute("allArea", arealisted);
 		return "Listarea";
 	}
@@ -60,21 +78,13 @@ public class AreaController {
 		}
 	}
 
-	@GetMapping("viewarea")
-	public String viewarea(Integer areaId, Model modelarea) {
-		System.out.println("ID==>" + areaId);
-		Optional<AreaEntity> op = repositoryarea.findById(areaId);
-		if (op.isEmpty()) {
-			// not found
-		} else {
-			// found
-			AreaEntity area = op.get();
-		
-			modelarea.addAttribute("area", area);
-		}
-	
-		return "ViewArea";
-	}
+//	@GetMapping("viewarea")
+//	public String viewarea(Integer areaId, Model modelarea) {
+//		System.out.println("ID==>" + areaId);
+//		List<Object[]> area = repositoryarea.getareacitystate(areaId);
+//		modelarea.addAttribute("area", area);
+//		return "ViewArea";
+//	}
 
 	@PostMapping("updatearea")
 	public String Updatearea(AreaEntity areaentity) {

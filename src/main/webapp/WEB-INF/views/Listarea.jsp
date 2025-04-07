@@ -83,7 +83,7 @@
               	<h5 class="card-title">
 										List <span>/ Area</span>
 									</h5>
-<a href="addarea" class="btn-link ml-10"><i class="bi bi-plus"></i> Add Area</a>  
+<a href="newarea" class="btn-link ml-10"><i class="bi bi-plus"></i> Add Area</a>  
     <a href="displayarea" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
 	<br>
 	<br>
@@ -93,19 +93,21 @@
                     <tr>
                         <th>Area Name</th>
                         <th>State Name</th>
+                        <th>City name</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <c:forEach items="${allArea}" var="ar">
                         <tr>
-                            <td>${ar.areaName}</td>
-                            <td>-</td>
-                            <td>
-                                <a href="viewarea?areaId=${ar.areaId}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a>
-                                <a href="editarea?areaId=${ar.areaId}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a>
-                                <a href="deletearea?areaId=${ar.areaId}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i>-Delete</a>
-                            </td>
+                            <td>${ar[1]}</td>
+                            <td>${ar[4]}</td>
+                            <td>${ar[5]}</td>
+                              <td>
+                                
+                                 <a href="editarea?areaId=${ar[0]}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a>
+                                <a href="deletearea?areaId=${ar[0]}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i>-Delete</a>
+                             </td>
                         </tr>
                     </c:forEach>
                 </tbody>

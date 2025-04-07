@@ -30,6 +30,12 @@ public class CityController {
 		return "NewCity";
 	}
 	
+	@GetMapping("addnewcity")
+	public String addnewcity(Model model){
+		List<StateEntity> allState2 = repositoryState.findAll();
+		model.addAttribute("allState2",allState2);
+		return "AddCity";
+	}
 	
 	@PostMapping("savecity")
 	public String savecity(CityEntity entitycity) {

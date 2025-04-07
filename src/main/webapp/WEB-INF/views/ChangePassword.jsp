@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 <h2>Change Password</h2>
 	<form action="updatepassword" method="post">
 	 
-		Email: <input type="text" name="email"/><br><br> 
+		Email: <input type="text" name="email" value="${users.userName}"/><br><br> 
 		
 		OTP: <input type="text" name="otp"/><br><br> 
 		

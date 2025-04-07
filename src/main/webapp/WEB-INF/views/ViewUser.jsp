@@ -105,7 +105,7 @@
 		<th>Gender:</th>
 		<th>Date Of Birth</th>
 		<th>Address</th>
-		<th>Pic</th>
+		<th>Photo</th>
 	</tr>    
 	</thead>
 	<tbody>
@@ -118,7 +118,7 @@
 	<td>${user.dob}</td>
 	<td>${user.dob}</td>
 	<td>
-	 	<img src="${user.profilePicPath}" height="100px">
+	 	<img src="${user.profilePicPath}" height="100px" width = "100px">
 	</td>
 	<tr>
 	</tbody>

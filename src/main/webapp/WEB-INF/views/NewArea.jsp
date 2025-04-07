@@ -1,11 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
 <title>New Area</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
@@ -23,7 +26,7 @@
 			<h1>Dashboard</h1>
 			<nav>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
 					<li class="breadcrumb-item active">Dashboard</li>
 				</ol>
 			</nav>
@@ -43,7 +46,7 @@
 							 
 								<div class="card-body">
 									<h5 class="card-title">
-										Reports <span>/Today</span>
+										Add <span>/Area</span>
 									</h5>
 <form action="savearea" method="post">
 
@@ -52,7 +55,27 @@
                 <label for="areaName" class="form-label">area Name</label>
                 <input type="text" class="form-control" id="areaName" name="areaName" >
             </div>
-
+											
+											<div class="col-md-15">
+											
+											City : <select name="cityId">
+											 <option>Select City</option>
+											<c:forEach items="${allCity1}" var="ct">
+												<option value="${ct.cityId}">${ct.cityName}</option>
+											</c:forEach>
+										</select>
+										<br>
+										<br>
+											State : <select name="stateId" >
+												<option>Select State</option>
+												<c:forEach items="${allStateCity}" var="state">
+													<option value="${state.stateId}">${state.stateName}</option>
+												</c:forEach>
+											</select>
+										</div>
+			
+											 <br> <br>
+										
             <!-- Submit Button -->
             <button type="submit" class="btn btn-primary w-100">Save Area</button>
 
@@ -76,6 +99,11 @@
 
 	</main>
 	<!-- main content end  -->
+ <script type="text/javascript">
+
+
+</script> 
+
 
 
 	<jsp:include page="AdminFooter.jsp"></jsp:include>

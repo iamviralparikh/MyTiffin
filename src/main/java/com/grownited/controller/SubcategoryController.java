@@ -60,6 +60,7 @@ public class SubcategoryController {
 		if (op.isEmpty()) {
 			return "redirect:/listsubcategory";
 		} else {
+			System.out.println(op.get(0)[2]);
 			model.addAttribute("subcategory", op);
 			return "EditSubcategory";
 

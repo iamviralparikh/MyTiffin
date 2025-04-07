@@ -50,9 +50,9 @@
 									<form action="updatesubcategory" method="post">
 										
 										<label>Subcategory-Name:</label> 
-										<input type="text" name="subCategoryName" value="${subcategory[2]}"><br>
+										<input type="text" name="subCategoryName" value="${subcategory[0][2]}"><br>
 										<br>
-											<input type="hidden" name="subcategoryId" value="${subcategory[0]}">
+											<input type="hidden" name="subcategoryId" value="${subcategory[0][0]}">
 											
 										<button type="submit">Update</button>
 									</form>

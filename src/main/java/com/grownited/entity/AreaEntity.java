@@ -14,6 +14,17 @@ public class AreaEntity {
 	private Integer areaId;
 	private String areaName;
 	private Integer cityId;
+	private Integer stateId;
+	
+	
+	
+	
+	public Integer getStateId() {
+		return stateId;
+	}
+	public void setStateId(Integer stateId) {
+		this.stateId = stateId;
+	}
 	public Integer getAreaId() {
 		return areaId;
 	}
