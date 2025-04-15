@@ -60,10 +60,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>List Area</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
+					<li class="breadcrumb-item active">Area</li>
 					<li class="breadcrumb-item active">List Area</li>
 				</ol>
 			</nav>
@@ -81,7 +82,7 @@
 
 			<div class="card-body">
               	<h5 class="card-title">
-										List <span>/ Area</span>
+										List <span>Area</span>
 									</h5>
 <a href="newarea" class="btn-link ml-10"><i class="bi bi-plus"></i> Add Area</a>  
     <a href="displayarea" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>

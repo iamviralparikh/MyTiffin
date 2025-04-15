@@ -3,6 +3,7 @@ package com.grownited.controller;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 //import org.hibernate.mapping.Map;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,17 +58,17 @@ public class ProdcutController {
 		}catch(IOException err){
 			err.printStackTrace();
 		}
-		try {
-			Map results1 = cloudinary.uploader().upload(productImage2.getBytes() , ObjectUtils.emptyMap());
-			entitypro.setProductImageURL2(results1.get("url").toString());
-		}catch(IOException err){
-			err.printStackTrace();
-		}
+//		try {
+//			Map results1 = cloudinary.uploader().upload(productImage2.getBytes() , ObjectUtils.emptyMap());
+//			entitypro.setProductImageURL2(results1.get("url").toString());
+//		}catch(IOException err){
+//			err.printStackTrace();
+//		}
 		repositoryproduct.save(entitypro);
 		
 		return "redirect:/listproduct";
 	}
-	// Je return thaay che ae java.util.map chhe hibernate no map nathi
+	
 	@GetMapping("listproduct")
 	public String listprodcut(Model modelpro){
 		List<Object[]> prolisted = repositoryproduct.getAll();
@@ -97,4 +98,49 @@ public class ProdcutController {
 		return "viewproduct";
 	}
 	
+	@GetMapping("editproduct")
+	public String editproduct(Integer productId, Model modelpro) {
+		Optional<ProductEntity> op = repositoryproduct.findById(productId);
+		if (op.isEmpty()) {
+			return "redirect:/listproduct";
+		}else {
+			modelpro.addAttribute("editpro",op.get());
+		}
+		return "EditProduct";
+	}
+	
+//	@PostMapping("updateproduct")
+//	public String Updaterpo(ProductEntity entitypro) {
+//		System.out.println("Product id: " + entitypro.getProductId());
+//		Optional<ProductEntity> op = repositoryproduct.findById(entitypro.getProductId());
+//
+//		if (op.isPresent()) {
+//			ProductEntity dbpro = op.get(); // pcode vhreg type id userId
+//			dbpro.setProductName(entitypro.getProductName());  
+//			repositoryproduct.save(dbpro);
+//		}
+//		return "redirect:/listproduct";
+//	}
+	@PostMapping("updateproduct")
+	public String updateproduct(ProductEntity entitypro ,Integer productId) {//pcode vhreg type vid 
+		
+		System.out.println(entitypro.getProductId());//id? db? 
+
+		Optional<ProductEntity> op = repositoryproduct.findById(productId);
+		
+		if(op.isPresent())
+		{
+			ProductEntity dbpro = op.get(); //pcode vhreg type id userId 
+			dbpro.setProductName(entitypro.getProductName());
+			dbpro.setProductDetail(entitypro.getProductDetail());
+			dbpro.setProductImageURL1(entitypro.getProductImageURL1());
+			dbpro.setBasePrice(entitypro.getBasePrice());
+			dbpro.setOfferPrice(entitypro.getOfferPrice());
+			dbpro.setOfferPercentage(entitypro.getOfferPercentage());//code 
+			//type 
+			//
+			repositoryproduct.save(dbpro);
+		}
+		return "redirect:/listproduct";
+	}
 }

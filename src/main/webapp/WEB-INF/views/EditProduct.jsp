@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -21,12 +22,12 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>EDIT-USER</h1>
+			<h1>EDIT-Product</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="">Home</a></li>
-					<li class="breadcrumb-item"><a href="">List Users</a></li>
-					<li class="breadcrumb-item active">Edit User</li>
+					<li class="breadcrumb-item active">Product</li>
+					<li class="breadcrumb-item active">Edit Product</li>
 				</ol>
 			</nav>
 		</div>
@@ -37,46 +38,33 @@
 
 				<!-- Left side columns -->
 				<div class="col-lg-12">
-					<div class="row" >
+					<div class="row">
 						<!-- Reports -->
 						<div class="col-12">
 							<div class="card">
 
-							 
+
 								<div class="card-body">
 									<h5 class="card-title">
-										Edit <span>/User</span>
+										Edit<span> /Product</span>
 									</h5>
 
-					 <form action="updateuser?userId=${user.userId}" method="post" encType = "multipart/form-data">
-        <input type="hidden" name="id" value="${user.userId}" />
+									<form action="updateproduct" method="post">
+										<input type="hidden" name="productId" value="${editpro.productId}">
 
-        <label>First-Name:</label>
-        <input type="text" name="firstName" value="${user.firstName}"  /><br><br>
-        
-        <label>Last-Name:</label>
-        <input type="text" name="lastName" value="${user.lastName}"  /><br><br>
-        
+										<label>Product-Name:</label> 
+										<input type="text" name="productName" value="${editpro.productName}"><br>
+										<br>
 
-        <label>Email:</label>
-        <input type="email" name="email" value="${user.email}"  disabled/><br><br>
-
-        <label>Phone:</label>
-        <input type="text" name="contactNum" value="${user.contactNum}" /><br><br>
-
-		<label>Photo:</label>
-		<img src = "${user.profilePicPath}" height="100px" width="100px">
-        <input type="file" name="profilePic" value="${user.profilePicPath}" /><br><br>
-			
-        <button type="submit">Update</button>
-    </form>
+										<button type="submit">Update</button>
+									</form>
 
 								</div>
 
 							</div>
 						</div>
 						<!-- End Reports -->
-            
+
 					</div>
 				</div>
 				<!-- End Left side columns -->

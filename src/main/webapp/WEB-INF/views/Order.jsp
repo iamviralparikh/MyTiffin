@@ -1,5 +1,9 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,27 +38,16 @@
 
     <body>
 
-        
 
 
         <!-- Navbar start -->
         <div class="container-fluid fixed-top">
             <div class="container topbar bg-primary d-none d-lg-block">
-                <div class="d-flex justify-content-between">
-                    <div class="top-info ps-2">
-                        <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#" class="text-white">Bodakdev,Ahmedabad,INDIA</a></small>
-                        <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#" class="text-white">MyTiffin@yopmail.com</a></small>
-                    </div>
-                    <div class="top-link pe-2">
-                        <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
-                        <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
-                        <a href="#" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
-                    </div>
-                </div>
+                
             </div>
             <div class="container px-0">
                 <nav class="navbar navbar-light bg-white navbar-expand-xl">
-                    <a href="index.html" class="navbar-brand"><h1 class="text-primary display-6">MyTiffin</h1></a>
+                    <a href="index.html" class="navbar-brand"><h1 class="text-primary display-6">Fruitables</h1></a>
                     <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars text-primary"></span>
                     </button>
@@ -62,16 +55,16 @@
                         <div class="navbar-nav mx-auto">
                             <a href="home" class="nav-item nav-link">Home</a>
                             <a href="product" class="nav-item nav-link">Product</a>
-                            <a href="order" class="nav-item nav-link">Order</a>
-                            <a href="cart" class="nav-item nav-link">Cart</a>
-                            <a href="contact" class="nav-item nav-link">Contact</a>
+                            <a href="listmyorder" class="nav-item nav-link">Order</a>
+                            <a href="mylistcart" class="nav-item nav-link">Cart</a>
                         </div>
-                        <div class="d-flex m-3 me-0">
-                            
-                            <a href="profile" class="my-auto">
-                                <i class="fas fa-user fa-2x"></i>
-                            </a>
-                        </div>
+                       <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-user fa-2x"></i></a>
+                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                    <a href="profile" class="dropdown-item">Profile</a>
+                                    <a href="logout" class="dropdown-item">Log Out</a>
+                                </div> 
+                            </div>
                     </div>
                 </nav>
             </div>
@@ -79,16 +72,14 @@
         <!-- Navbar End -->
 
 
-  
-
 
         <!-- Single Page Header start -->
         <div class="container-fluid page-header py-5">
-            <h1 class="text-center text-white display-6">Checkout</h1>
+            <h1 class="text-center text-white display-6">Order</h1>
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                <li class="breadcrumb-item active text-white">Checkout</li>
+                <li class="breadcrumb-item active text-white">Order</li>
             </ol>
         </div>
         <!-- Single Page Header End -->

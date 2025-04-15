@@ -21,7 +21,8 @@
         <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+		
         <!-- Libraries Stylesheet -->
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -43,7 +44,7 @@
             <div class="container topbar bg-primary d-none d-lg-block">
                 <div class="d-flex justify-content-between">
                     
-                    <h3><i class="bi bi-bag">Profile</i></h3>
+                    <h3><i class="fas fa-heart">Wishlist</i>  </h3>
                 </div>
             </div>
             <div class="container px-0">
@@ -59,8 +60,9 @@
                             <a href="mylistcart" class="nav-item nav-link "><i class="fas fa-shopping-cart"></i> Cart</a>
                             <a href="listmyorder" class="nav-item nav-link "><i class="fas fa-box"></i> Order</a>
                             <a href="listmyreviews" class="nav-item nav-link "><i class="fas fa-star"></i> Review & Rating</a>
-                            <a href="mywishlist" class="nav-item nav-link"><i class="fas fa-heart"></i> Wishlist</a>
+                            <a href="mywishlist" class="nav-item nav-link active"><i class="fas fa-heart"></i> Wishlist</a>
                             
+                        	
                         </div>
                         <div class="d-flex m-3 me-0">
                            
@@ -70,7 +72,7 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-user fa-2x"></i></a>
                                 <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                    <a href="addusersaddress" class="dropdown-item">Profile</a>
+                                    <a href="profile" class="dropdown-item">Profile</a>
                                     <a href="logout" class="dropdown-item">Log Out</a>
                                 </div> 
                             </div>
@@ -81,51 +83,75 @@
         </div>
         <!-- Navbar End -->
 <div class="container-fluid page-header py-5">
-            <h1 class="text-center text-white display-6">Profile</h1>
+            <h1 class="text-center text-white display-6">Wishlist</h1>
             <ol class="breadcrumb justify-content-center mb-0">
                 <li class="breadcrumb-item"><a href="home">Home</a></li>
-                <li class="breadcrumb-item text-white\"><a href="profile">Profile</a></li>
-                
+                <li class="breadcrumb-item "><a href="product">Product</a></li>
+                <li class="breadcrumb-item text-white"><a href="mywishlist">Wishlist</a></li>
                 
             </ol>
         </div>
 
-     <div class="container my-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6 bg-light rounded p-4 shadow">
-            <h2 class="text-center mb-4">Profile Details</h2>
-
-            <div class="text-center mb-3">
-                <c:choose>
-                    <c:when test="${not empty sessionScope.user.profilePicPath}">
-                        <img src="${sessionScope.user.profilePicPath}" alt="Profile Picture" class="rounded-circle" width="150" height="150">
-                    </c:when>
-                    <c:otherwise>
-                        <img src="img/default-profile.png" alt="Default Profile Picture" class="rounded-circle" width="150" height="150">
-                    </c:otherwise>
-                </c:choose>
+ <!-- Fruits Shop Start-->
+        <div class="container-fluid fruite py-5">
+            <div class="container py-5">
+                
+                    <div class="row g-4">
+                        <div class="col-lg-4 text-start">
+                            <h1>My Wishlist</h1>
+                        </div>
+                        
+                    </div>
+                    
+                   
+                   
+                                           <c:set var="total" value="0"></c:set>
+                                           <!-- START OF CART -->
+                                         
+                                         
+                                            <div class="container py-5">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                          	<th scope="col">Wishlist</th>
+                            <th scope="col">Product Image</th>
+                            <th scope="col">product Name</th>
+                            <th scope="col">Offer Price</th>
+                            <th scope="col">Add to cart</th>
+                            <th scope="col">Action</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <c:forEach items="${listOfwish}" var="lmw">
+                            <tr>
+                            <td><i class="fas fa-heart"></i></td>
+                            <td scope="row">
+                                    <div class="d-flex align-items-center">
+                                        <img src="${lmw[4]}" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
+                                    </div></td>
+                            <td>${lmw[3]}</td>
+                            <td>${lmw[5]}</td>
+                            <td><a href="viewmyproduct?productId=${lmw[0]}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-eye me-2 text-primary"></i>View</a>
+                                                
+							</td>
+                            <td><a href="deletemywish?wishlistId=${lmw[0]}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> - Delete</a>
+                                </td>
+                            	</tr>
+                       </c:forEach>
+                           
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
+         </div>
+                                       
+                                        
+                                  
+        <!-- cart Shop End-->
 
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>First Name:</strong> ${sessionScope.user.firstName}</li>
-                <li class="list-group-item"><strong>Last Name:</strong> ${sessionScope.user.lastName}</li>
-                <li class="list-group-item"><strong>Email:</strong> ${sessionScope.user.email}</li>
-                <li class="list-group-item"><strong>Contact Number:</strong> ${sessionScope.user.contactNum}</li>
-                <br>
-                <button style="border-radius: 50px; font-size: 24px;"><a href="editmyprofile" >Edit My Profile</a></button>
-            </ul>
-        </div>
-    </div>
-</div>
-     
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>       
-
-       
 
 
         <!-- Copyright Start -->
@@ -161,7 +187,12 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
+
     <script src="js/main.js"></script>
+
+
+
+
     </body>
 
 </html>

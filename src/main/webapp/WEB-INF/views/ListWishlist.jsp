@@ -10,7 +10,7 @@
 <link  href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
  
  
-<title>Dashboard</title>
+<title>List Wishlist</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
@@ -60,11 +60,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>List Wishlist</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="admindashborad">Home</a></li>
-					<li class="breadcrumb-item active">List User Address</li>
+					<li class="breadcrumb-item active">List Wishlist</li>
 				</ol>
 			</nav>
 		</div>
@@ -92,32 +92,19 @@
         <thead>
             <tr>
                 
-                <th>Title</th>
-                <th>Unit Name</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Street</th>
-                <th>Landmark</th>
-                <th>Zip Code</th>
-                <th>Actions</th>
+                <th>WishList ID</th>
+                <th>User ID</th>
+                <th>Product ID</th>
             </tr>
         </thead>
         <tbody>
-            <c:forEach items="${allUserAdd}" var="usadd" >
+            <c:forEach items="${listOfwishs}" var="lw" >
                 <tr>
                     
-                    <td>${usadd.title}</td>
-                    <td>${usadd.unitName}</td>
-                    <td>${usadd.cityName}</td>
-                    <td>${usadd.stateName}</td>
-                    <td>${usadd.street}</td>
-                    <td>${usadd.landMark}</td>
-                    <td>${usadd.zipCode}</td>
-                    <td>
-                        <a href="viewuseraddress?userAddressId=${usadd.userAddressId}"class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a> 
-                        <a href="edituseraddress?userAddressId=${usadd.userAddressId}"class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a> 
-                        <a href="deleteuseraddress?userAddressId=${usadd.userAddressId}" class="btn btn-sm btn-danger" ><i class="bi bi-trash"></i>-Delete</a>
-                    </td>
+                    <td>${lw.wishlistId}</td>
+                    <td>${lw.userId}</td>
+                    <td>${lw.productId}</td>
+                    
                 </tr>
             </c:forEach>
         </tbody>

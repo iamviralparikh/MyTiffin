@@ -10,9 +10,8 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link  href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
- 
 
-<title>List State </title>
+<title>List Cart</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
@@ -54,7 +53,6 @@
         
 </style>
 
-
 </head>
 <body>
 	<jsp:include page="AdminHeader.jsp"></jsp:include>
@@ -64,13 +62,12 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>List State</h1>
+			<h1>List Cart</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-					<li class="breadcrumb-item active">State</li>
-					<li class="breadcrumb-item active">List State</li>
-					
+					<li class="breadcrumb-item active">Cart</li>
+					<li class="breadcrumb-item active">List Cart</li>
 				</ol>
 			</nav>
 		</div>
@@ -85,30 +82,50 @@
 						<div class="col-12">
 							<div class="card">
 
+
 			<div class="card-body">
               	<h5 class="card-title">Data-tables</h5>
               	
-<a href="addstate" class="btn-link ml-10"><i class="bi bi-plus"></i> Add State</a>  
-    <a href="displaystate" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
+     
+    <a href="displaycitys" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
 	<br>
 	<br>
               <!-- Table with stripped rows -->
     			<table border="1" class="table datatable datatable-table table-hover" id="myTable">
 					<thead>
                     <tr>
-                        <th>State Name</th>
+                        <th>User ID</th>
+                        <th>Product ID</th>
+                        <th>cart Id</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach items="${allState}" var="st">
+                    <c:forEach items="${ListCart}" var="ct">
                         <tr>
-                            <td>${st.stateName}</td>
-                            <td>
-                                <!-- <a href="viewstate?stateId=${st.stateId}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a> -->
-                                <a href="editstate?stateId=${st.stateId}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a>
-                                <a href="deletestate?stateId=${st.stateId}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i>-Delete</a>
-                            </td>
+                            <td>${ct.userId}</td>
+                            <td>${ct.productId}</td>
+                            <td>${ct.cartId}</td>
+                            
+    <td>
+    <form action="updatecart" method="post">
+        <input type="hidden" name="cartId" value="${ct.cartId}" />
+        <select name="status" onchange="this.form.submit()">
+            <option ${ct.status == null ? "selected" : ""}>Select</option>
+            <option value="pending" ${ct.status == 'pending' ? 'selected' : ''}>Pending</option>
+            <option value="processing" ${ct.status == 'processing' ? 'selected' : ''}>Processing</option>
+            <option value="shipped" ${ct.status == 'shipped' ? 'selected' : ''}>Shipped</option>
+            <option value="delivered" ${ct.status == 'delivered' ? 'selected' : ''}> Delivered</option>
+            <!-- <option value="cancelled" ${ct.status == 'cancelled' ? 'selected' : ''}> Cancelled</option> -->
+        </select>
+    </form>
+</td>
+
+
+                    		<td>
+                    			<a href="deleteadcart?cartId=${ct.cartId}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i>- Delete</a>
+                    		</td>
                         </tr>
                     </c:forEach>
                 </tbody>
@@ -117,7 +134,6 @@
               <!-- End Table with stripped rows -->
 
             </div>
-
 </div>
 </div>
 </div>
@@ -140,8 +156,6 @@
  		let table = new DataTable('#myTable');
  	});
  	</script>
-
-
 	<jsp:include page="AdminFooter.jsp"></jsp:include>
 
 	<jsp:include page="AdminJs.jsp"></jsp:include>

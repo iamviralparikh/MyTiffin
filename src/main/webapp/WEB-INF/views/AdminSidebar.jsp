@@ -67,7 +67,7 @@
             </a>
         </li>
 
-<!--   
+
 
         <li class="nav-item">
             <a class="nav-link" href="displaycart">
@@ -86,20 +86,25 @@
                 <i class="bi bi-star"></i> <span>List-Ratings & Reviews</span>
             </a>
         </li>
-        
+        <li class="nav-item">
+            <a class="nav-link" href="displayorder">
+                <i class="bi bi-star"></i> <span>List Order</span>
+            </a>
+        </li>
+     <!--   
         <li class="nav-item">
             <a class="nav-link" href="displayuseraddress">
                 <i class="bi bi-person"></i> <span>List-User's Address</span>
             </a>
         </li>
- -->
+        
               <li class="nav-item">
             <a class="nav-link" href="profile">
                 <i class="bi bi-person"></i> <span>Account</span>
             </a>
         </li>
 
-		
+	--> 	
 
     </ul>
 

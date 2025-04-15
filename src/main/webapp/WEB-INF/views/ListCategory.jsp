@@ -61,10 +61,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>List Category</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
+					<li class="breadcrumb-item active">Category</li>
 					<li class="breadcrumb-item active">List Category</li>
 				</ol>
 			</nav>
@@ -81,7 +82,7 @@
 							<div class="card">
 
 							<div class="card-body">
-              					<h5 class="card-title">Data-tables</h5>
+              					<h5 class="card-title">List Category</h5>
               	
        <a href="newcategory" class="btn-link ml-10"><i class="bi bi-plus"></i> Add Category</a>  
     <a href="displaycategory" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>

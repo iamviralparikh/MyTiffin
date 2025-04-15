@@ -11,7 +11,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link  href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
 
-<title>Dashboard</title>
+<title>List User</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
@@ -61,10 +61,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>List User</h1>
 			<nav>
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item"><a href="admindasboard">Home</a></li>
+					<li class="breadcrumb-item active">User</li>
 					<li class="breadcrumb-item active">List User</li>
 				</ol>
 			</nav>

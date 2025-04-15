@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>City</title>
+<title>Order</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 <style>
@@ -57,11 +57,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>City</h1>
+			<h1>Order</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-					<li class="breadcrumb-item active">City</li>
+					<li class="breadcrumb-item active">Order</li>
 				</ol>
 			</nav>
 		</div>
@@ -84,23 +84,24 @@
 									</h5>
 										<a href="edituser" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">Add User</a><br>
 										</div>
-								 --><br>
+								 -->
+								<!-- <div class="card-body">
+									<h5 class="card-title">
+										Add <span>Cart</span>
+									</h5>
+										
+										<a href="newcategory" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">Add category</a><br>
+								
+								</div>
+									 -->
+			<br>
 			 <a href="admindashboard" class="btn-linked btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
 		
 								<div class="card-body">
 									<h5 class="card-title">
-										Add <span>City</span>
+										List <span>Order</span>
 									</h5>
-										
-										<a href="addcity" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">Add City</a><br>
-								
-								</div>
-									
-								<div class="card-body">
-									<h5 class="card-title">
-										List <span>City</span>
-									</h5>
-										<a href="listcity" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">List City</a><br>
+										<a href="listorder" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">List Order</a><br>
 								
 								</div>	
 							</div>

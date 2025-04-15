@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Dashboard</title>
+<title>List Review</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 <style>
@@ -96,7 +96,7 @@
 									<h5 class="card-title">
 										List <span>user'Review & Rating</span>
 									</h5>
-										<a href="listuseraddress" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">List Review & Ratings </a><br>
+										<a href="listadminreview" class="btn btn-primary w-100" type="submit" fdprocessedid="ai49e">List Review & Ratings </a><br>
 								
 								</div>		
 							</div>

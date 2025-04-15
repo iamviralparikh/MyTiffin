@@ -9,7 +9,7 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>New Area</title>
+<title>Add Area</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
@@ -23,11 +23,12 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>Add Area</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-					<li class="breadcrumb-item active">Dashboard</li>
+					<li class="breadcrumb-item active">Area</li>
+					<li class="breadcrumb-item active">Add Area</li>
 				</ol>
 			</nav>
 		</div>

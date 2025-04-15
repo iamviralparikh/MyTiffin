@@ -32,6 +32,62 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        
+        
+        
+<style>
+    .form-container {
+        width: 400px;
+        margin: 40px auto;
+        padding: 30px;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        background-color: #f9f9f9;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .form-container label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        margin-top: 15px;
+        color: #333;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container input[type="file"] {
+        width: 100%;
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .form-container img {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        border: 1px solid #aaa;
+    }
+
+    .form-container button {
+        margin-top: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .form-container button:hover {
+        background-color: #45a049;
+    }
+</style>
     </head>
 
     <body>
@@ -54,13 +110,20 @@
                     </button>
                     <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
-                            <a href="home" class="nav-item nav-link "><i class="fas fa-home"></i> Home</a>
-                            <a href="product" class="nav-item nav-link"><i class="fas fa-shopping-bag"></i> Product</a>
-                            <a href="mylistcart" class="nav-item nav-link "><i class="fas fa-shopping-cart"></i> Cart</a>
-                            <a href="listmyorder" class="nav-item nav-link "><i class="fas fa-box"></i> Order</a>
-                            <a href="listmyreviews" class="nav-item nav-link "><i class="fas fa-star"></i> Review & Rating</a>
-                            <a href="mywishlist" class="nav-item nav-link"><i class="fas fa-heart"></i> Wishlist</a>
-                            
+                            <a href="home" class="nav-item nav-link ">Home</a>
+                            <a href="product" class="nav-item nav-link  ">Product</a>
+                            <a href="order" class="nav-item nav-link ">Order</a>
+                            <!-- <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
+                                    <a href="cart.html" class="dropdown-item">Cart</a>
+                                    <a href="chackout.html" class="dropdown-item">Chackout</a>
+                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                    <a href="404.html" class="dropdown-item">404 Page</a>
+                                </div> 
+                            </div>-->
+                            <a href="cart" class="nav-item nav-link">Cart</a>
+                        	
                         </div>
                         <div class="d-flex m-3 me-0">
                            
@@ -90,32 +153,39 @@
             </ol>
         </div>
 
-     <div class="container my-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6 bg-light rounded p-4 shadow">
-            <h2 class="text-center mb-4">Profile Details</h2>
 
-            <div class="text-center mb-3">
-                <c:choose>
-                    <c:when test="${not empty sessionScope.user.profilePicPath}">
-                        <img src="${sessionScope.user.profilePicPath}" alt="Profile Picture" class="rounded-circle" width="150" height="150">
-                    </c:when>
-                    <c:otherwise>
-                        <img src="img/default-profile.png" alt="Default Profile Picture" class="rounded-circle" width="150" height="150">
-                    </c:otherwise>
-                </c:choose>
-            </div>
 
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>First Name:</strong> ${sessionScope.user.firstName}</li>
-                <li class="list-group-item"><strong>Last Name:</strong> ${sessionScope.user.lastName}</li>
-                <li class="list-group-item"><strong>Email:</strong> ${sessionScope.user.email}</li>
-                <li class="list-group-item"><strong>Contact Number:</strong> ${sessionScope.user.contactNum}</li>
-                <br>
-                <button style="border-radius: 50px; font-size: 24px;"><a href="editmyprofile" >Edit My Profile</a></button>
-            </ul>
-        </div>
-    </div>
+<div class="form-container">
+    <form action="updateprofile?userId=${user.userId}" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="userId" value="${user.userId}" />
+    
+        <label>First Name:</label>
+        <input type="text" name="firstName" value="${user.firstName}" required />
+
+        <label>Last Name:</label>
+        <input type="text" name="lastName" value="${user.lastName}" required />
+
+        <label>Email:</label>
+        <input type="email" name="email" value="${user.email}" disabled />
+
+        <label>Phone:</label>
+        <input type="text" name="contactNum" value="${user.contactNum}" required />
+
+        <label>Current Profile Picture:</label>
+        <c:choose>
+            <c:when test="${not empty user.profilePicPath}">
+                <img src="${user.profilePicPath}" height="100" width="100" />
+            </c:when>
+            <c:otherwise>
+                <img src="img/default-profile.png" height="100" width="100" style="justify-content: space-between;"/>
+            </c:otherwise>
+        </c:choose>
+
+        <label>Change Profile Picture:</label>
+        <input type="file" name="profilePic" accept="image/*" />
+
+        <button type="submit">Update</button>
+    </form>
 </div>
      
 <br>

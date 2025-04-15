@@ -54,10 +54,11 @@
 
     <main id="main" class="main">
         <div class="pagetitle">
-            <h1>Dashboard</h1>
+            <h1>List-Product</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="admindasboard">Home</a></li>
+                    <li class="breadcrumb-item active">Product</li>
                     <li class="breadcrumb-item active">List Product</li>
                 </ol>
             </nav>
@@ -79,8 +80,7 @@
                                         <th>Product Name</th>
                                         <th>Subcategory</th>
                                         <th>category</th>
-                                        <th>Photo-1</th>
-                                        <th>Photo-2</th>
+                                        <th>Photo</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -91,9 +91,10 @@
                                             <td>${lp[14]}</td>
                                             <td>${lp[13]}</td>
                                             <td><img src="${lp[6]}" height="100px"></td>
-                                            <td><img src="${lp[7]}" height="100px"></td>
                                             <td>
-                                                <a href="viewproduct?productId=${lp[0]}">View</a>
+                                                <a href="viewproduct?productId=${lp[0]}">View</a>|
+                                                <a href="editproduct?productId=${lp[0]}">Edit</a>|
+                                                <a href="deleteproduct?productId=${lp[0]}">Delete</a>
                                             </td>
                                         </tr><!-- features doc batay toh abstract -->
                                     </c:forEach>

@@ -10,7 +10,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Dashboard</title>
+<title>Add Subcategory</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
@@ -24,10 +24,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>Add Subcategory</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">Home</li>
+					<li class="breadcrumb-item active">Subcategory</li>
 					<li class="breadcrumb-item active">Add Category</li>
 				</ol>
 			</nav>

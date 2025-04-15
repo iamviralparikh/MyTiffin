@@ -14,6 +14,8 @@ public class CartEntity {
 	private Integer cartId;
 	private Integer userId;//fk=user
 	private Integer productId;//fk=product
+	private String status;	//pending , shipped , delievered , cancel , etc		
+	
 	//quantity;
 	public Integer getCartId() {
 		return cartId;
@@ -32,6 +34,12 @@ public class CartEntity {
 	}
 	public void setProductId(Integer productId) {
 		this.productId = productId;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 	

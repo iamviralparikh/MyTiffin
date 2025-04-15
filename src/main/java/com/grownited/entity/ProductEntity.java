@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 public class ProductEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long productId;
+	private Integer productId;
 
 	private String productName;
 
@@ -31,11 +31,15 @@ public class ProductEntity {
 	private Integer quantity; // fk=user
 	private Date createdBy;
 
-	public Long getProductId() {
+	
+	
+	
+
+	public Integer getProductId() {
 		return productId;
 	}
 
-	public void setProductId(Long productId) {
+	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
 

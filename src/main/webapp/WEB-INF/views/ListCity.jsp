@@ -62,10 +62,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>List City</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
+					<li class="breadcrumb-item active">City</li>
 					<li class="breadcrumb-item active">List City</li>
 				</ol>
 			</nav>
@@ -83,7 +84,8 @@
 
 
 			<div class="card-body">
-              	<h5 class="card-title">Data-tables</h5>
+              	<br>
+              	
               	
        <a href="addcity" class="btn-link ml-10"><i class="bi bi-plus"></i> Add City</a>  
     <a href="displaycitys" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
@@ -104,7 +106,7 @@
                             <td>${ct[1]}</td>
                             <td>${ct[3]}</td>
                             <td>
-                                <a href="viewcity?CityId=${ct[0]}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a>
+                                <!-- <a href="viewcity?CityId=${ct[0]}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a> -->
                                 <a href="editcity?CityId=${ct[0]}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a>
                                 <a href="deletecity?CityId=${ct[0]}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i>-Delete</a>
                             </td>

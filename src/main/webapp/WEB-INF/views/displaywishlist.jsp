@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>State</title>
+<title>Wishlist</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 <style>
@@ -57,11 +57,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>Wishlist</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-					<li class="breadcrumb-item active">State</li>
+					<li class="breadcrumb-item active">Wishlist</li>
 				</ol>
 			</nav>
 		</div>

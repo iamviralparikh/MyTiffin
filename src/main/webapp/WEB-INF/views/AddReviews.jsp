@@ -93,27 +93,44 @@
      <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-md-6 bg-light rounded p-4 shadow">
-            <h2 class="text-center mb-4">Profile Details</h2>
+            <h2 class="text-center mb-4">Review & Rating</h2>
 
-            <div class="text-center mb-3">
-                <c:choose>
-                    <c:when test="${not empty sessionScope.user.profilePicPath}">
-                        <img src="${sessionScope.user.profilePicPath}" alt="Profile Picture" class="rounded-circle" width="150" height="150">
-                    </c:when>
-                    <c:otherwise>
-                        <img src="img/default-profile.png" alt="Default Profile Picture" class="rounded-circle" width="150" height="150">
-                    </c:otherwise>
-                </c:choose>
-            </div>
+           <form action="addreview" method="post">
+    <!-- Hidden Fields for userId and productId -->
+    <input type="hidden" name="userId" value="${user.userId}" />
+    <input type="hidden" name="productId" value="${productId}" />
+	<h1>Product id ${productId }</h1>
+    <!-- Star Rating -->
+    <div class="rating-input mb-3">
+        <input type="radio" id="star1" name="rating" value="1" required />
+        <label for="star1"><i class="fa fa-star"></i></label>
+        
+        <input type="radio" id="star2" name="rating" value="2" />
+        <label for="star2"><i class="fa fa-star"></i></label>
+        
+        <input type="radio" id="star3" name="rating" value="3" />
+        <label for="star3"><i class="fa fa-star"></i></label>
+        
+        <input type="radio" id="star4" name="rating" value="4" />
+        <label for="star4"><i class="fa fa-star"></i></label>
+        
+        <input type="radio" id="star5" name="rating" value="5" />
+        <label for="star5"><i class="fa fa-star"></i></label>
+    </div>
 
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>First Name:</strong> ${sessionScope.user.firstName}</li>
-                <li class="list-group-item"><strong>Last Name:</strong> ${sessionScope.user.lastName}</li>
-                <li class="list-group-item"><strong>Email:</strong> ${sessionScope.user.email}</li>
-                <li class="list-group-item"><strong>Contact Number:</strong> ${sessionScope.user.contactNum}</li>
-                <br>
-                <button style="border-radius: 50px; font-size: 24px;"><a href="editmyprofile" >Edit My Profile</a></button>
-            </ul>
+    <!-- Review Text -->
+    <div class="form-group">
+        <textarea name="reviewText" class="form-control" placeholder="Write your review..." required></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">Submit Review</button>
+    </div>
+</form>
+
+
+            
         </div>
     </div>
 </div>
@@ -165,3 +182,4 @@
     </body>
 
 </html>
+

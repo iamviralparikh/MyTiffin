@@ -10,9 +10,45 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Dashboard</title>
+<title>Add Category</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
+<style>
+
+.link-button {
+            display: inline-block;
+            padding: 2px 4px;
+            background-color: #ff9800; /* Orange */
+            color: #012970;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 25px;
+            transition: 0.3s;
+            text-align: center;
+            border: none;
+            width: 100%;
+        }
+        .link-button:hover {
+            background-color: #e65100; /* Dark Orange */
+        }
+        .btn-link {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .btn-link-back {
+            background-color: #6c757d;
+        }
+        .ml-10 {
+            margin-left: 35px;
+        }
+        .mr-10 {
+            margin-left: 750px;
+        }
+        
+</style>
 
 
 </head>
@@ -24,10 +60,11 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>Dashboard</h1>
+			<h1>Add Category</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">Home</li>
+					<li class="breadcrumb-item active">Category</li>
 					<li class="breadcrumb-item active">Add Category</li>
 				</ol>
 			</nav>
@@ -91,14 +128,16 @@
 
 								<div class="card-body">
 									<h5 class="card-title">
-										Dashboard<span> OF Admin</span>
+										Add <span> Category</span>
 									</h5>
-									
-									<a> Add Catecory</a>
+									<a href="newcategory" class="btn-link ml-10"><i class="bi bi-plus"></i> Add Category</a>  
+    <a href="displaycategory" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
+	<br>
+	<br>
 									<form action="savecategory" method="post">
         
         <div class="mb-3">
-            <label for="categoryName" class="form-label">Category Name</label>
+            <label for="categoryName" class="form-label">Add Category Name</label>
             <input type="text" class="form-control" id="categoryName" name="categoryName" required>
         </div>
 

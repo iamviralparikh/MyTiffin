@@ -54,6 +54,7 @@ public class CityController {
 	}
 	
 	
+	
 	@GetMapping("deletecity")
 	public String deletecity(Integer CityId) {
 		repositorycity.deleteById(CityId);

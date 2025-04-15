@@ -10,9 +10,8 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link  href="https://cdn.datatables.net/2.2.2/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
- 
 
-<title>List State </title>
+<title>List Order</title>
 
 <jsp:include page="AdminCss.jsp"></jsp:include>
 
@@ -54,7 +53,6 @@
         
 </style>
 
-
 </head>
 <body>
 	<jsp:include page="AdminHeader.jsp"></jsp:include>
@@ -64,13 +62,12 @@
 	<main id="main" class="main">
 
 		<div class="pagetitle">
-			<h1>List State</h1>
+			<h1>List Order</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-					<li class="breadcrumb-item active">State</li>
-					<li class="breadcrumb-item active">List State</li>
-					
+					<li class="breadcrumb-item active">Order</li>
+					<li class="breadcrumb-item active">List Order</li>
 				</ol>
 			</nav>
 		</div>
@@ -85,30 +82,38 @@
 						<div class="col-12">
 							<div class="card">
 
+
 			<div class="card-body">
-              	<h5 class="card-title">Data-tables</h5>
+              	<h5 class="card-title">List Order</h5>
               	
-<a href="addstate" class="btn-link ml-10"><i class="bi bi-plus"></i> Add State</a>  
-    <a href="displaystate" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
+     
+    <a href="displaycitys" class="btn-link btn-link-back mr-10"><i class="bi bi-arrow-left"></i> Back</a>
 	<br>
 	<br>
-              <!-- Table with stripped rows -->
+               <!-- Table with stripped rows -->
     			<table border="1" class="table datatable datatable-table table-hover" id="myTable">
 					<thead>
                     <tr>
-                        <th>State Name</th>
-                        <th>Action</th>
+                        <th>User ID</th>
+                        <th>Product ID</th>
+                        <th>Order Id</th>
+                        
+                        
                     </tr>
                 </thead>
                 <tbody>
-                    <c:forEach items="${allState}" var="st">
+                    <c:forEach items="${ListCart}" var="ct">
                         <tr>
-                            <td>${st.stateName}</td>
-                            <td>
-                                <!-- <a href="viewstate?stateId=${st.stateId}" class="btn btn-sm btn-info"><i class="bi bi-eye"></i>-View</a> -->
-                                <a href="editstate?stateId=${st.stateId}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i>-Edit</a>
-                                <a href="deletestate?stateId=${st.stateId}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i>-Delete</a>
-                            </td>
+                            <td>${ct.userId}</td>
+                            <td>${ct.productId}</td>
+                            <td>${ct.cartId}</td>
+                            
+    
+
+
+                    		<!-- <td>
+                    			<a href="deleteadcart?cartId=${ct.cartId}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i>- Delete</a>
+                    		</td> -->
                         </tr>
                     </c:forEach>
                 </tbody>
@@ -117,7 +122,6 @@
               <!-- End Table with stripped rows -->
 
             </div>
-
 </div>
 </div>
 </div>
@@ -140,8 +144,6 @@
  		let table = new DataTable('#myTable');
  	});
  	</script>
-
-
 	<jsp:include page="AdminFooter.jsp"></jsp:include>
 
 	<jsp:include page="AdminJs.jsp"></jsp:include>
